@@ -1,4 +1,4 @@
-[gd_scene load_steps=352 format=2]
+[gd_scene load_steps=375 format=2]
 
 [ext_resource path="res://Graphics/Character Sprites/Ninten/main.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Main/party/Player.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Nodes/Reusables/sprite_data_fetcher.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Graphics/Character Sprites/Ninten/bat_swing.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/misc/NintenBatSwing.gd" type="Script" id=19]
+[ext_resource path="res://Graphics/Character Sprites/Pippi/special.png" type="Texture" id=22]
 
 [sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
@@ -3397,6 +3398,734 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+
+[sub_resource type="Animation" id=566]
+resource_name = "Dash Down"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=567]
+resource_name = "Dash DownLeft"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43, 44, 45 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 135.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=568]
+resource_name = "Dash DownRight"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 50, 51, 52, 53, 54, 55 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 45.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=569]
+resource_name = "Dash Left"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14, 15 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=570]
+resource_name = "Dash Right"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23, 24, 25 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=571]
+resource_name = "Dash Up"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32, 33, 34, 35 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=565]
+resource_name = "Dash UpLeft"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 60, 61, 62, 63, 64, 65 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -135.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="Animation" id=572]
+resource_name = "Dash UpRight"
+length = 0.5
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpecialAnimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 70, 71, 72, 73, 74, 75 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_dash_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 45.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position/main:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpecialAnimations:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SpecialAnimations:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HitboxPivot/DashHitbox/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.083, 0.415 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=543]
@@ -8300,6 +9029,59 @@ blend_point_7/node = SubResource( 348 )
 blend_point_7/pos = Vector2( 0.6, -0.7 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=552]
+animation = "Dash Left"
+
+[sub_resource type="AnimationNodeAnimation" id=553]
+animation = "Dash DownLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=554]
+animation = "Dash Down"
+
+[sub_resource type="AnimationNodeAnimation" id=555]
+animation = "Dash DownRight"
+
+[sub_resource type="AnimationNodeAnimation" id=556]
+animation = "Dash Right"
+
+[sub_resource type="AnimationNodeAnimation" id=557]
+animation = "Dash UpRight"
+
+[sub_resource type="AnimationNodeAnimation" id=558]
+animation = "Dash Up"
+
+[sub_resource type="AnimationNodeAnimation" id=559]
+animation = "Dash UpLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=560]
+blend_point_0/node = SubResource( 552 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 553 )
+blend_point_1/pos = Vector2( -0.6, 0.6 )
+blend_point_2/node = SubResource( 554 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 555 )
+blend_point_3/pos = Vector2( 0.6, 0.6 )
+blend_point_4/node = SubResource( 556 )
+blend_point_4/pos = Vector2( 1, 0 )
+blend_point_5/node = SubResource( 557 )
+blend_point_5/pos = Vector2( 0.6, -0.6 )
+blend_point_6/node = SubResource( 558 )
+blend_point_6/pos = Vector2( 0, -1 )
+blend_point_7/node = SubResource( 559 )
+blend_point_7/pos = Vector2( -0.6, -0.6 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeTimeScale" id=561]
+
+[sub_resource type="AnimationNodeBlendTree" id=562]
+nodes/Dash/node = SubResource( 560 )
+nodes/Dash/position = Vector2( 120, 140 )
+nodes/TimeScale/node = SubResource( 561 )
+nodes/TimeScale/position = Vector2( 360, 160 )
+nodes/output/position = Vector2( 560, 160 )
+node_connections = [ "TimeScale", 0, "Dash", "output", 0, "TimeScale" ]
+
 [sub_resource type="AnimationNodeAnimation" id=544]
 animation = "Down Left"
 
@@ -8826,6 +9608,12 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=548]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=563]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=564]
+switch_mode = 2
+auto_advance = true
+
 [sub_resource type="AnimationNodeStateMachine" id=76]
 states/Bat/node = SubResource( 464 )
 states/Bat/position = Vector2( -155.748, 175.526 )
@@ -8839,6 +9627,8 @@ states/CastPrep/node = SubResource( 236 )
 states/CastPrep/position = Vector2( -62.0353, 93.06 )
 states/Crouch/node = SubResource( 349 )
 states/Crouch/position = Vector2( 628.363, 49.5141 )
+states/Dash/node = SubResource( 562 )
+states/Dash/position = Vector2( 798.288, 203.15 )
 states/Down/node = SubResource( 546 )
 states/Down/position = Vector2( 15.288, -172.949 )
 states/FaintedIdle/node = SubResource( 440 )
@@ -8863,9 +9653,9 @@ states/Soot/node = SubResource( 495 )
 states/Soot/position = Vector2( 630.886, -204.995 )
 states/Walk/node = SubResource( 524 )
 states/Walk/position = Vector2( 628.317, 143.641 )
-transitions = [ "Shoot", "Idle", SubResource( 405 ), "Idle", "Crouch", SubResource( 406 ), "Crouch", "Idle", SubResource( 408 ), "Idle", "Blink", SubResource( 409 ), "Blink", "Idle", SubResource( 410 ), "Idle", "ShootPrep", SubResource( 411 ), "ShootPrep", "ShootHold", SubResource( 412 ), "ShootHold", "Shoot", SubResource( 413 ), "Cast", "Idle", SubResource( 223 ), "Idle", "CastPrep", SubResource( 237 ), "CastPrep", "CastHold", SubResource( 264 ), "CastHold", "Cast", SubResource( 265 ), "Crouch", "Jump", SubResource( 295 ), "Jump", "Crouch", SubResource( 296 ), "ShootHold", "Idle", SubResource( 297 ), "ShootPrep", "Idle", SubResource( 298 ), "Idle", "FaintedIdle", SubResource( 450 ), "FaintedIdle", "Idle", SubResource( 451 ), "Idle", "Bat", SubResource( 465 ), "Bat", "Idle", SubResource( 466 ), "FaintedIdle", "FaintedWalk", SubResource( 478 ), "FaintedWalk", "FaintedIdle", SubResource( 479 ), "Soot", "Idle", SubResource( 497 ), "Idle", "Soot", SubResource( 498 ), "Scared", "Idle", SubResource( 507 ), "Idle", "Scared", SubResource( 508 ), "Crouch", "Run", SubResource( 522 ), "Run", "Soot", SubResource( 523 ), "Walk", "Run", SubResource( 535 ), "Run", "Walk", SubResource( 536 ), "Walk", "Idle", SubResource( 537 ), "Idle", "Walk", SubResource( 538 ), "ShootPrep", "Shoot", SubResource( 539 ), "Shoot", "Walk", SubResource( 540 ), "Shoot", "FaintedWalk", SubResource( 541 ), "Shoot", "ShootPrep", SubResource( 542 ), "Down", "Idle", SubResource( 547 ), "Idle", "Down", SubResource( 548 ) ]
+transitions = [ "Shoot", "Idle", SubResource( 405 ), "Idle", "Crouch", SubResource( 406 ), "Crouch", "Idle", SubResource( 408 ), "Idle", "Blink", SubResource( 409 ), "Blink", "Idle", SubResource( 410 ), "Idle", "ShootPrep", SubResource( 411 ), "ShootPrep", "ShootHold", SubResource( 412 ), "ShootHold", "Shoot", SubResource( 413 ), "Cast", "Idle", SubResource( 223 ), "Idle", "CastPrep", SubResource( 237 ), "CastPrep", "CastHold", SubResource( 264 ), "CastHold", "Cast", SubResource( 265 ), "Crouch", "Jump", SubResource( 295 ), "Jump", "Crouch", SubResource( 296 ), "ShootHold", "Idle", SubResource( 297 ), "ShootPrep", "Idle", SubResource( 298 ), "Idle", "FaintedIdle", SubResource( 450 ), "FaintedIdle", "Idle", SubResource( 451 ), "Idle", "Bat", SubResource( 465 ), "Bat", "Idle", SubResource( 466 ), "FaintedIdle", "FaintedWalk", SubResource( 478 ), "FaintedWalk", "FaintedIdle", SubResource( 479 ), "Soot", "Idle", SubResource( 497 ), "Idle", "Soot", SubResource( 498 ), "Scared", "Idle", SubResource( 507 ), "Idle", "Scared", SubResource( 508 ), "Crouch", "Run", SubResource( 522 ), "Run", "Soot", SubResource( 523 ), "Walk", "Run", SubResource( 535 ), "Run", "Walk", SubResource( 536 ), "Walk", "Idle", SubResource( 537 ), "Idle", "Walk", SubResource( 538 ), "ShootPrep", "Shoot", SubResource( 539 ), "Shoot", "Walk", SubResource( 540 ), "Shoot", "FaintedWalk", SubResource( 541 ), "Shoot", "ShootPrep", SubResource( 542 ), "Down", "Idle", SubResource( 547 ), "Idle", "Down", SubResource( 548 ), "Run", "Dash", SubResource( 563 ), "Dash", "Run", SubResource( 564 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -301.712, -245.949 )
+graph_offset = Vector2( -301.712, -23.8502 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=77]
 
@@ -8926,6 +9716,10 @@ tracks/2/keys = {
 [sub_resource type="CapsuleShape2D" id=80]
 radius = 10.4999
 height = 17.0
+
+[sub_resource type="CapsuleShape2D" id=551]
+radius = 7.05
+height = 10.42
 
 [node name="Player" type="KinematicBody2D"]
 use_parent_material = true
@@ -9038,6 +9832,14 @@ process_mode = 1
 "anims/Crouch Up" = SubResource( 139 )
 "anims/Crouch UpLeft" = SubResource( 150 )
 "anims/Crouch UpRight" = SubResource( 151 )
+"anims/Dash Down" = SubResource( 566 )
+"anims/Dash DownLeft" = SubResource( 567 )
+"anims/Dash DownRight" = SubResource( 568 )
+"anims/Dash Left" = SubResource( 569 )
+"anims/Dash Right" = SubResource( 570 )
+"anims/Dash Up" = SubResource( 571 )
+"anims/Dash UpLeft" = SubResource( 565 )
+"anims/Dash UpRight" = SubResource( 572 )
 "anims/Down Left" = SubResource( 543 )
 "anims/Down Right" = SubResource( 502 )
 "anims/Fainted Idle Down" = SubResource( 416 )
@@ -9148,6 +9950,8 @@ parameters/Cast/blend_position = Vector2( 0, 0 )
 parameters/CastHold/blend_position = Vector2( 0.601103, -0.707031 )
 parameters/CastPrep/blend_position = Vector2( -0.697917, -0.613281 )
 parameters/Crouch/blend_position = Vector2( 0.699617, 0.713389 )
+parameters/Dash/Dash/blend_position = Vector2( -0.99, -0.003 )
+parameters/Dash/TimeScale/scale = 1.0
 parameters/Down/blend_position = Vector2( 0, 0 )
 parameters/FaintedIdle/blend_position = Vector2( 0, 0 )
 parameters/FaintedWalk/FaintedWalk/blend_position = Vector2( 0, 0 )
@@ -9199,6 +10003,15 @@ rotation = 1.5708
 position = Vector2( -3.8147e-06, -1.5 )
 rotation = 1.5708
 shape = SubResource( 80 )
+disabled = true
+
+[node name="DashHitbox" parent="HitboxPivot" instance=ExtResource( 5 )]
+position = Vector2( 12.7413, 0.953379 )
+
+[node name="CollisionShape2D" parent="HitboxPivot/DashHitbox" index="0"]
+position = Vector2( -3.8147e-06, -1.5 )
+rotation = 1.5708
+shape = SubResource( 551 )
 disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -9260,3 +10073,4 @@ sprite_paths = [ NodePath("../Position/main"), NodePath("../Shadow"), NodePath("
 [connection signal="timeout" from="TPTakeOffTime" to="." method="_on_TPTakeOffTime_timeout"]
 
 [editable path="HitboxPivot/BatHitbox"]
+[editable path="HitboxPivot/DashHitbox"]
