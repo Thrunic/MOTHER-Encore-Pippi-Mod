@@ -44,11 +44,11 @@ func _input(event):
 	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel") or event.is_action_pressed("ui_toggle"):
 		var btn_next = event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel")
 		var btn_cancel = event.is_action_pressed("ui_cancel")
-		_action_press(btn_next, btn_cancel)
+		_action_press(btn_next, btn_cancel, event)
 		get_tree().set_input_as_handled()
 
 # Overridden
-func _action_press(btn_next := false, btn_cancel := false):
+func _action_press(btn_next := false, btn_cancel := false, event = null):
 	if !_finished and !_stopped:
 		if btn_cancel:
 			_speed_multiplier_from_input = SPEED_UP_FROM_PRESS_B

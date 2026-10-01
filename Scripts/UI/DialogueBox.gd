@@ -76,9 +76,15 @@ func _finish_phrase():
 			_next_phrase()
 
 # Override
-func _action_press(btn_next := false, btn_cancel := false):
+func _action_press(btn_next := false, btn_cancel := false, event = null):
 	if !$AnimationPlayer.is_playing() and $WaitTimer.time_left == 0 and _can_input:
-		if !_finished and !_stopped:
+		if _curr_phrase.has("gotooninput"):
+			var inputs = _curr_phrase["gotooninput"]
+			for input in inputs:
+				if event.is_action_pressed(input):
+					_phrase_num = inputs[input]
+			_handle_phrase()
+		elif !_finished and !_stopped:
 			if btn_cancel:
 				_speed_multiplier_from_input = SPEED_UP_FROM_PRESS_B
 			else:
@@ -1220,7 +1226,24 @@ func _handle_phrase() -> void:
 					globaldata.characters[member].add_skill(existing_skill)
 			else:
 				globaldata.characters[member].add_skill(skill)
-	
+
+	#Recruit causes the current party leader to leave the party, and the specified npc to take their place.
+	if _curr_phrase.has("recruit"):
+		var old_leader = global.party[0]
+		var new_leader = globaldata.characters[_curr_phrase["recruit"]]
+		
+		global.party[0] = new_leader
+		
+		globaldata.set_flag("%s_recruitable" % old_leader.get_name(), true)
+		globaldata.set_flag("%s_recruitable" % new_leader.get_name(), false)
+		
+		var npc_to_show = get_node("../../NPCS/%s_recruitable" % old_leader.get_name())
+		var npc_to_hide = get_node("../../NPCS/%s_recruitable" % new_leader.get_name())
+		npc_to_show.position = npc_to_hide.position
+		npc_to_show.show()
+		npc_to_hide.hide()
+		
+		global.update_party_spritesheets()	
 	
 	
 	if !_curr_phrase.has("text") and !_curr_phrase.has("wait") and !_curr_phrase.has("autowait"):
@@ -1587,7 +1610,7 @@ func _show_box(show: bool, sfx = true):
 		if sfx:
 			audioManager.play_sfx_by_name("menu_close", "menu_close")
 		_clear_dialogue()
-		set_process_input(false)
+		set_process_input(true)
 		set_physics_process(false)
 
 func _set_nametag():

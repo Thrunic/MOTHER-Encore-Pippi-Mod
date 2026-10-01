@@ -152,7 +152,7 @@ func did_finish() -> bool:
 	return _finished
 
 # Override
-func _action_press(btn_next := false, btn_cancel := false):
+func _action_press(btn_next := false, btn_cancel := false, event = null):
 	if !_is_waiting_between_phrases:
 		._action_press(btn_next, btn_cancel)
 		$Timer.stop()
