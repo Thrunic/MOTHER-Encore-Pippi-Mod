@@ -340,7 +340,14 @@ func _init_flags():
 		
 		#Youngtown #Swamp #Ellay #MtItoi
 		"magicant_fifth_visit",
-		"magicant_sixth_visit"
+		"magicant_sixth_visit",
+
+		#Recruitment system
+		"ninten_recruitable",
+		"pippi_recruitable",
+		"lloyd_recruitable",
+		"ana_recruitable",
+		"teddy_recruitable"
 	]
 	
 	for flag in flag_names:
