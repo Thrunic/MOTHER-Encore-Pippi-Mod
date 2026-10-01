@@ -26,6 +26,7 @@ var _is_continuous_damage := false
 var _steps := 0
 var _paused_anim_state := ""
 var _direction := Vector2.ZERO
+var _layer: = 0
 
 func _ready():
 	global.connect("party_changed", self, "update_party_member")

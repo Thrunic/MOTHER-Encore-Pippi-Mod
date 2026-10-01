@@ -51,6 +51,7 @@ var _walk := false
 var _substantial_movement: bool
 var _crouch := false
 var _tap_run := false
+var _dash: = false
 var _running := false
 var _switching := false
 var _spin_num := 0
@@ -85,6 +86,7 @@ func _ready():
 		global.partySpace.pop_back()
 	_anim_tree.active = true
 	_tap_run = false
+	_dash = false
 	_crouch = false
 	_direction = Vector2(0,1)
 	blend_position(_direction)
@@ -223,7 +225,7 @@ func _move_state(delta: float):
 			audioManager.get_sfx("run").stop()
 
 func _input(event: InputEvent):
-	if _paused or _state != MOVE or global.entering_door:
+	if _paused or _state != MOVE or global.entering_door or _dash:
 		return
 	if event.is_action_pressed("ui_cancel") and !_climbing and !_spinning:
 		var action_skills = _get_skills_button_actions()
@@ -264,6 +266,15 @@ func _do_attack():
 			$PKTime.start()
 			$OutlineAnim.play("Flash")
 
+		"dash":
+			_state = ATTACK
+			_idle = false
+			_crouch = false
+			_set_running(true)
+			_dash = true
+			global.can_pause = false
+			_attack_unleash()
+
 func _get_skills_button_actions() -> Array:
 	var ret := []
 	for skill_id in globaldata.get_all_field_skills():
@@ -278,20 +289,20 @@ func _controls():
 		_input_vector.x = 0
 
 func _move():
-	_velocity = _speed * (_direction if _tap_run else _input_vector)
+	_velocity = _speed * (_direction if _tap_run or _dash else _input_vector)
 	
-	if _input_vector != Vector2.ZERO:
+	if _input_vector != Vector2.ZERO and !_dash:
 		_direction = _input_vector
 		eventRayCaster.rotation = _direction.angle() - TAU/4
 		emit_signal("moved")
 
 func _movement(delta: float):
-	if _input_vector != Vector2.ZERO or _tap_run:
+	if _input_vector != Vector2.ZERO or _tap_run or _dash:
 		_move()
 		
 		if _climbing:
 			_anim_player.playback_speed = 1
-		if Input.is_action_pressed("ui_toggle") or _tap_run:
+		if Input.is_action_pressed("ui_toggle") or _tap_run or _dash:
 			if  Input.is_action_just_pressed("ui_toggle") and !_crouch and !_running and !_climbing:
 				_crouch = true
 				if _party_member.has_field_skill("teleport"):
@@ -301,7 +312,8 @@ func _movement(delta: float):
 				_set_running(false)
 			if !_paused and _substantial_movement:
 				_set_running(true)
-			set_anim_state("Run")
+			if not _dash:
+				set_anim_state("Run")
 			_anim_tree.set("parameters/FaintedWalk/TimeScale/scale", 2)
 			_speed = SPEED_RUNNING
 		else:
@@ -341,7 +353,7 @@ func _movement(delta: float):
 		_idle = false
 	else:
 		_substantial_movement = false
-	if _substantial_movement:
+	if _substantial_movement or _dash:
 		_walk = true
 		_crouch = false
 		_update_party_positions(oldpos)
@@ -379,12 +391,12 @@ func _movement(delta: float):
 	for i in global.partyObjects:
 		if i.is_climbing():
 			can_climb = false
-	if can_climb and global.party.size() != 1 and _party_member.has_field_skill("relay"):
+	if can_climb and global.party.size() != 1 and !_dash and _party_member.has_field_skill("relay"):
 		if Input.is_action_just_pressed("ui_focus_next"):
 			swap_spin(1)
 		if Input.is_action_just_pressed("ui_focus_prev"):
 			swap_spin(-1)
-	if Input.is_action_just_pressed("ui_accept") and !_paused and can_interact and !global.entering_door and eventRayCaster.is_colliding():
+	if Input.is_action_just_pressed("ui_accept") and !_paused and can_interact and !global.entering_door and eventRayCaster.is_colliding() and !_dash:
 		if _crouch:
 			use_telepathy()
 		else:
@@ -525,7 +537,7 @@ func spritesheet():
 # Override
 func blend_position(vector2: Vector2):
 	if vector2 != Vector2.ZERO:
-		for param in ["Idle", "Blink", "Walk/Walk", "FaintedIdle", "FaintedWalk/FaintedWalk", "Down", "Crouch", "Run/Run", "Jump", "Bat/Bat", "ShootPrep", "Cast", "CastHold", "CastPrep", "ShootHold"]:
+		for param in ["Idle", "Blink", "Walk/Walk", "FaintedIdle", "FaintedWalk/FaintedWalk", "Down", "Crouch", "Run/Run", "Jump", "Bat/Bat", "ShootPrep", "Cast", "CastHold", "CastPrep", "ShootHold", "Dash/Dash"]:
 			blend_animation(param, vector2)
 
 func _attack_hold():
@@ -571,6 +583,16 @@ func _attack_unleash():
 			_anim_state.travel("Cast")
 			$OutlineAnim.play("Normal")
 			$PKTime.stop()
+		"dash":
+			$AudioStreamPlayer.stream = load("res://Audio/Sound effects/Ninten Bat.mp3")
+			$AudioStreamPlayer.play()
+			global.start_joy_vibration(0, 0.35, 0, 0.2)
+			_anim_state.travel("Dash")
+			if _party_member.is_incapacitated():
+				_anim_tree.set("parameters/Bat/TimeScale/scale", 0.7)
+			else:
+				_anim_tree.set("parameters/Bat/TimeScale/scale", 1)
+			_state = MOVE
 		_:
 			_state = MOVE
 
@@ -578,6 +600,12 @@ func _attack_animation_finished():
 	$HitboxPivot/BatHitbox/CollisionShape2D.disabled = true
 	_state = MOVE
 	_tap_run = false
+
+func _dash_animation_finished():
+	$HitboxPivot / DashHitbox / CollisionShape2D.disabled = true
+	_dash = false
+	_set_running(_tap_run)
+	global.can_pause = true
 
 func hit_stop(length: float, camShake: float, pause := false, timeScale := 0.0, animation := ""):
 	var oldTimeScale = 1
@@ -834,7 +862,10 @@ func exit_camera():
 
 func _set_collision_masks(enabled: bool):
 	set_collision_mask_bit(0, enabled)
-	set_collision_mask_bit(8, enabled)
+	if (_layer == 0): # Vanilla behavior.
+		set_collision_mask_bit(8, enabled)
+	else:
+		set_collision_mask_bit(_layer - 1, enabled)
 
 func _on_BlinkTime_timeout():
 	_idle = true

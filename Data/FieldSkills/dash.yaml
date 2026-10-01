@@ -1,0 +1,10 @@
+name: FIELD_DASH
+description: FIELD_DASH_DESC
+is_skill_button: true
+flag: bat
+usable:
+  ninten: false
+  ana: false
+  lloyd: false
+  teddy: false
+  pippi: true
