@@ -119,10 +119,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Main/Switches/ControlledTwoStatesObject.gd"
 }, {
-"base": "Control",
+"base": "Reference",
 "class": "Credits",
 "language": "GDScript",
-"path": "res://Scripts/UI/Credits/credits.gd"
+"path": "res://Scripts/UI/Credits/Credits.gd"
 }, {
 "base": "AnimatedSprite",
 "class": "Cursor",
