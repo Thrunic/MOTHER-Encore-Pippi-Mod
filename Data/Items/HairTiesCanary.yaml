@@ -1,0 +1,22 @@
+name: HAIRTIESCANARY_NAME
+sorting_name: HAIRTIESCANARY_SORT
+description: HAIRTIESCANARY_DESC
+article: HAIRTIESCANARY_ART
+keyitem: false
+cost: 96
+value: 48
+can_use: [ pippi ]
+actions:
+  - function: equip
+transform: ''
+slot: other
+HPrecover: 0
+PPrecover: 0
+boost:
+  maxhp: 0
+  maxpp: 0
+  offense: 0
+  defense: 0
+  speed: 2
+  iq: 0
+  guts: 2
