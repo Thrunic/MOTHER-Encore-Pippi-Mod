@@ -173,6 +173,12 @@ sprite = "Pippi/main"
 dialog = "Podunk/pippi_town_hall"
 staring = true
 
+[node name="npc5" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( -216, -600 )
+sprite = "Ninten/main"
+dialog = "Podunk/ninten_town_hall"
+staring = true
+
 [node name="Above" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )

@@ -1,5 +1,6 @@
 key,en,fr,it,ja,ko,es,es_ES,pt_BR,pl,de,ru,uk,zh_CN
 LOC_NINTEN'S_HOUSE,[Ninten]'s House,Chez [Ninten],Casa di [Ninten],マイホーム,[Ninten]의 집,Casa de [Ninten],Casa de [Ninten],Casa de [Ninten],Dom [decline:Ninten:M:1],Haus von [Ninten],Дом [decline:Ninten:M:1],Дім [decline:Ninten:M:1],[Ninten]的住宅
+LOC_PIPPI'S_HOUSE,[Pippi]'s House,Chez [Pippi],Casa di [Pippi],,[Pippi]의 집,Casa de [Pippi],Casa de [Pippi],Casa de [Pippi],Dom [decline:Pippi:F:1],Haus von [Pippi],Дом [decline:Pippi:F:1],Дім [decline:Pippi:F:1],[Pippi]的住宅
 LOC_PODUNK,Podunk,Podunk,Podunk,マザーズデイ,마더즈데이,Podunk,Podunk,Boa Mãe,Podunk,Podunk,Поданк,Поданк,波顿克
 LOC_CATACOMBS,Catacombs,Catacombes,Catacombe,はかば　ちかどうくつ,지하 묘지,Catacumbas,Catacumbas,Catacumbas,Katakumby,Katakomben,Катакомбы,Катакомби,地下墓穴
 LOC_ZOO_OFFICE,Zoo Office,Bureaux du zoo,Ufficio dello zoo,どうぶつえん　じむしょ,동물원 관리사무소,Oficina del zoológico,Oficinas del zoo,Escritório do Zoológico,Biuro Zoo,Büro vom Zoo,Дом управ. зоопарком,Управління зоопарку,动物园办公楼

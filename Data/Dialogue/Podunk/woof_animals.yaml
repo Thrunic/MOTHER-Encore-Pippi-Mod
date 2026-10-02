@@ -1,4 +1,14 @@
 '0':
+  if:
+    flags:
+      ninten_recruitable: true
+    goto: '2'
+  goto: '1'
+'1':
   name: DIALOGUE_PODUNK_WOOF_ANIMALS_SPEAKER_Mick
   text: DIALOGUE_PODUNK_WOOF_ANIMALS_0
+  soundeffect: M3/Woof Woof!.wav
+'2':
+  name: DIALOGUE_PODUNK_WOOF_ANIMALS_SPEAKER_Mick
+  text: DIALOGUE_PODUNK_WOOF_ANIMALS_1
   soundeffect: M3/Woof Woof!.wav

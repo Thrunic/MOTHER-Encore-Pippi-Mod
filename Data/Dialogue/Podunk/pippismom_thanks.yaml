@@ -1,4 +1,14 @@
 '0':
+  if:
+    flags:
+      ninten_recruitable: true
+    goto: '2'
+  goto: '1'
+'1':
   name: DIALOGUE_PODUNK_PIPPISMOM_THANKS_SPEAKER_Mrs._Lindgren
   sound: Female
   text: DIALOGUE_PODUNK_PIPPISMOM_THANKS_0
+'2':
+  name: DIALOGUE_PODUNK_PIPPISMOM_THANKS_SPEAKER_Mrs._Lindgren
+  sound: Female
+  text: DIALOGUE_PODUNK_PIPPISMOM_THANKS_1

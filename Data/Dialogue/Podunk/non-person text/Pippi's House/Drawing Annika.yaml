@@ -1,0 +1,11 @@
+'0':
+  if:
+    haspartymembers:
+      pippi: true
+    goto: '1'
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_DRAWING_ANNIKA_0
+
+'1':
+  name: '[Pippi]'
+  sound: Kid
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_DRAWING_ANNIKA_1

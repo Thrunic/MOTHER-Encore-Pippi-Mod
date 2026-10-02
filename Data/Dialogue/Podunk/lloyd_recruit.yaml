@@ -1,0 +1,17 @@
+'0':
+  name: '[Lloyd]'
+  sound: Kid
+  text: DIALOGUE_PODUNK_LLOYD_RECRUIT_0
+  goto: '1'
+'1':
+  text: DIALOGUE_PODUNK_LLOYD_RECRUIT_1
+  options:
+    DIALOGUE_PODUNK_LLOYD_RECRUIT_1_YES: '2'
+    DIALOGUE_PODUNK_LLOYD_RECRUIT_1_NO: '67'
+    cancel: '67'
+'2':
+  talker: null
+  sound: Adult
+  text: DIALOGUE_PODUNK_LLOYD_RECRUIT_2
+  soundeffect: Item Received.mp3
+  recruit: lloyd

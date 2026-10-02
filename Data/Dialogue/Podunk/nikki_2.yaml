@@ -1,4 +1,14 @@
 '0':
+  if:
+    flags:
+      ninten_recruitable: true
+    goto: '2'
+  goto: '1'
+'1':
   name: DIALOGUE_PODUNK_NIKKI_2_SPEAKER_Nikki
   sound: Adult
   text: DIALOGUE_PODUNK_NIKKI_2_0
+'2':
+  name: DIALOGUE_PODUNK_NIKKI_2_SPEAKER_Nikki
+  sound: Adult
+  text: DIALOGUE_PODUNK_NIKKI_2_1

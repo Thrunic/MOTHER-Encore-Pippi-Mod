@@ -1,0 +1,164 @@
+'0':
+  actors:
+    pippi: pippi
+    ninten: ninten
+    lloyd: lloyd
+    ana: ana
+    teddy: teddy
+  if:
+    haspartymembers:
+      pippi: true
+    goto: '1'
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_0
+'1':
+  if:
+    - leader: pippi
+      goto: '2'
+  goto: '3'
+'2':
+  name: '[Pippi]'
+  sound: Kid
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_2
+  options:
+    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_36-OPT_0: '5'
+    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_36-OPT_1: '4'
+    cancel: '4'
+'3':
+  name: '[Pippi]'
+  sound: Kid
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_3
+  options:
+    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_36-OPT_0: '5'
+    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_36-OPT_1: '4'
+    cancel: '4'
+'4':
+  name: '[Pippi]'
+  sound: Kid
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_4
+'5':
+  name: '[Pippi]'
+  sound: Kid
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_5
+  goto: '6'
+'6':
+  actorsmove:
+    pippi:
+      movement:
+        - x: 307
+          y: 60
+        - turnto:
+            y: -1
+      speed: 96
+      animation: Walk
+      type: position
+    ninten:
+      movement:
+        - x: 293
+          y: 61
+        - turnto:
+            y: -1
+      speed: 96
+      animation: Walk
+      type: position
+    lloyd:
+      movement:
+        - x: 299
+          y: 50
+        - turnto:
+            y: -1
+      speed: 96
+      animation: Walk
+      type: position
+  wait: 0.4
+  autoadvance: true
+  goto: '7'
+'7':
+  actorsmove:
+    pippi:
+      movement:
+        - turnto:
+            y: 1
+      speed: 96
+      animation: Walk
+      type: position
+    ninten:
+      movement:
+        - turnto:
+            y: 1
+      speed: 96
+      animation: Walk
+      type: position
+    lloyd:
+      movement:
+        - turnto:
+            y: 1
+      speed: 96
+      animation: Walk
+      type: position
+  wait: 0.2
+  autoadvance: true
+  goto: '8'
+'8':
+  actorsmove:
+    pippi:
+      movement:
+        - jump:
+            speed: 0.2
+            height: 16
+            times: 1
+            async: false
+      animation: Walk
+      type: position
+    ninten:
+      movement:
+        - wait: 0.08
+        - jump:
+            speed: 0.2
+            height: 16
+            times: 1
+            async: false
+      speed: 96
+      animation: Walk
+      type: position
+    lloyd:
+      movement:
+        - wait: 0.16
+        - jump:
+            speed: 0.2
+            height: 16
+            times: 1
+            async: false
+      speed: 96
+      animation: Walk
+      type: position
+  soundeffect: Lever.mp3
+  wait: 0.2
+  autoadvance: false
+  gotooninput:
+    ui_accept: '8'
+    ui_cancel: '9'
+'9':
+  actorsmove:
+    pippi:
+      movement:
+        - x: 307
+          y: 84
+      speed: 96
+      animation: Walk
+      type: position
+    ninten:
+      movement:
+        - x: 293
+          y: 84
+      speed: 96
+      animation: Walk
+      type: position
+    lloyd:
+      movement:
+        - x: 301
+          y: 80
+      speed: 96
+      animation: Walk
+      type: position
+  wait: 0.6
+  autoadvance: true

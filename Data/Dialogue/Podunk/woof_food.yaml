@@ -1,3 +1,12 @@
 '0':
+  if:
+    flags:
+      ninten_recruitable: true
+    goto: '2'
+  goto: '1'
+'1':
   name: DIALOGUE_PODUNK_WOOF_FOOD_SPEAKER_Mick
   text: DIALOGUE_PODUNK_WOOF_FOOD_0
+'2':
+  name: DIALOGUE_PODUNK_WOOF_FOOD_SPEAKER_Mick
+  text: DIALOGUE_PODUNK_WOOF_FOOD_1

@@ -1,9 +1,22 @@
 "0":
+  if:
+    flags:
+      ninten_recruitable: true
+    goto: '2'
+  goto: '1'
+"1":
   actors:
     player: leader
   name: DIALOGUE_PODUNK_CAROL_FOOD_SPEAKER_Carol
   sound: Female
   text: DIALOGUE_PODUNK_CAROL_FOOD_0
+  goto: "4"
+"2":
+  actors:
+    player: leader
+  name: DIALOGUE_PODUNK_CAROL_FOOD_SPEAKER_Carol
+  sound: Female
+  text: DIALOGUE_PODUNK_CAROL_FOOD_1
   goto: "4"
 "4":
   showbox: false
