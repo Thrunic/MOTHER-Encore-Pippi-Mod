@@ -7808,12 +7808,21 @@ staring = true
 speed = 1
 walk_frequency = 1
 
-[node name="npc42" parent="Objects/NPCS" instance=ExtResource( 8 )]
+[node name="pippi_recruitable" parent="Objects/NPCS" instance=ExtResource( 8 )]
 position = Vector2( 640, 304 )
 sprite = "Pippi/main"
-dialog = "Podunk/pippi_house"
-appear_flag = "pippi_delivered"
-disappear_flag = "lloyd_befriended"
+dialog = "Podunk/pippi_recruit"
+appear_flag = "pippi_recruitable"
+initial_dir = Vector2( 0, 1 )
+staring = true
+wander = true
+walk_frequency = 1
+
+[node name="ninten_recruitable" parent="Objects/NPCS" instance=ExtResource( 8 )]
+position = Vector2( 696, 294 )
+sprite = "Ninten/main"
+dialog = "Podunk/ninten_recruit"
+appear_flag = "ninten_recruitable"
 initial_dir = Vector2( 0, 1 )
 staring = true
 wander = true
