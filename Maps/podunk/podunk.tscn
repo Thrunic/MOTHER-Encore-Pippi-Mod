@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Nodes/Overworld/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilesets/Podunk.tres" type="TileSet" id=2]
@@ -65,6 +65,124 @@ shader_param/flash_color = Color( 1, 1, 1, 1 )
 shader_param/glow_color = Color( 1, 1, 1, 1 )
 shader_param/flash_modifier = 0.0
 shader_param/glow_modifier = 0.0
+
+[sub_resource type="Animation" id=439]
+resource_name = "Action"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NonPlayerStaticBody2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=440]
+resource_name = "Normal"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NonPlayerStaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=441]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NonPlayerStaticBody2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="ShaderMaterial" id=120]
 resource_local_to_scene = true
@@ -6023,7 +6141,7 @@ cell_y_sort = true
 collision_layer = 573
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -196609, 24, 0, 983079, 23, 0, 2883603, 23, 0, 4325397, 23, 0, 4390948, 23, 0, 5177369, 22, 0, 6094856, 48, 0, 6094876, 49, 0, 6160400, 48, 0, 6160418, 48, 0, 6291491, 182, 0, 7471096, 56, 0, 7405593, 56, 0, 7405595, 56, 0, 8454155, 48, 0, 8585197, 49, 0, 8585248, 49, 0, 8585256, 48, 0, 8585269, 22, 0, 8716261, 23, 0, 8781821, 56, 0, 9502705, 22, 0, 9437195, 23, 0, 9502747, 22, 0, 11403233, 25, 0 )
+tile_data = PoolIntArray( -196609, 24, 0, 983079, 25, 0, 2883603, 23, 0, 4325397, 23, 0, 4390948, 23, 0, 5177369, 22, 0, 6094856, 48, 0, 6094876, 49, 0, 6160400, 48, 0, 6160418, 48, 0, 6291491, 182, 0, 7471096, 56, 0, 7405593, 56, 0, 7405595, 56, 0, 8454155, 48, 0, 8585197, 49, 0, 8585248, 49, 0, 8585256, 48, 0, 8585269, 22, 0, 8716261, 23, 0, 8781821, 56, 0, 9502705, 22, 0, 9437195, 23, 0, 9502747, 22, 0, 11403233, 25, 0 )
 
 [node name="NintensHouse" parent="Objects/Doors" instance=ExtResource( 1 )]
 position = Vector2( -8, -48 )
@@ -6035,6 +6153,17 @@ end_sound = "Door_Short.mp3"
 transit_in_anim = "Circle Focus"
 transit_out_anim = "Circle Focus"
 targetScene = "podunk/Nintens House"
+
+[node name="PippisHouse" parent="Objects/Doors" instance=ExtResource( 1 )]
+position = Vector2( 632, 256 )
+scale = Vector2( 4, 1 )
+targetX = 136
+targetY = 816
+dir = Vector2( 0, -1 )
+end_sound = "Door_Short.mp3"
+transit_in_anim = "Circle Focus"
+transit_out_anim = "Circle Focus"
+targetScene = "podunk/Pippis House"
 
 [node name="Hospital" parent="Objects/Doors" instance=ExtResource( 1 )]
 position = Vector2( -48, 2151 )
@@ -6188,6 +6317,35 @@ material = SubResource( 119 )
 position = Vector2( 0, 22 )
 
 [node name="NonPlayerStaticBody2D" parent="Objects/Doors/Openable Door" index="7"]
+position = Vector2( 0, 22 )
+
+[node name="Pippis Door" parent="Objects/Doors" instance=ExtResource( 28 )]
+position = Vector2( 649, 240 )
+sprite = ExtResource( 29 )
+door_offset = Vector2( 0, -10 )
+
+[node name="Sprite" parent="Objects/Doors/Pippis Door" index="0"]
+position = Vector2( 0, -10 )
+texture = ExtResource( 29 )
+
+[node name="Area2D" parent="Objects/Doors/Pippis Door" index="1"]
+position = Vector2( 0, 22 )
+
+[node name="interact" parent="Objects/Doors/Pippis Door" index="2"]
+position = Vector2( 0, 22 )
+
+[node name="ButtonPrompt" parent="Objects/Doors/Pippis Door/interact" index="1"]
+material = SubResource( 119 )
+
+[node name="AnimationPlayer" parent="Objects/Doors/Pippis Door" index="4"]
+anims/Action = SubResource( 439 )
+anims/Normal = SubResource( 440 )
+anims/RESET = SubResource( 441 )
+
+[node name="StaticBody2D" parent="Objects/Doors/Pippis Door" index="6"]
+position = Vector2( 0, 22 )
+
+[node name="NonPlayerStaticBody2D" parent="Objects/Doors/Pippis Door" index="7"]
 position = Vector2( 0, 22 )
 
 [node name="Openable Door2" parent="Objects/Doors" instance=ExtResource( 28 )]
@@ -9246,6 +9404,7 @@ position = Vector2( 334, 92 )
 shape = SubResource( 438 )
 
 [editable path="Objects/Doors/NintensHouse"]
+[editable path="Objects/Doors/PippisHouse"]
 [editable path="Objects/Doors/Hospital"]
 [editable path="Objects/Doors/DeptStoreL"]
 [editable path="Objects/Doors/DeptStoreR"]
@@ -9254,6 +9413,7 @@ shape = SubResource( 438 )
 [editable path="Objects/Doors/TownHall"]
 [editable path="Objects/Doors/BurgerShop"]
 [editable path="Objects/Doors/Openable Door"]
+[editable path="Objects/Doors/Pippis Door"]
 [editable path="Objects/Doors/Openable Door2"]
 [editable path="Objects/Zoo Flag"]
 [editable path="Objects/Zoo Flag/Jump Area"]
