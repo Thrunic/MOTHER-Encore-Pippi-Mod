@@ -261,3 +261,13 @@ func try_to_turn(target:Node2D):
 #		_direction = rel_position
 #	blend_animation("Idle", _direction)
 #	set_anim_state("Idle")
+
+func set_layer(target: int):
+	_layer = target
+	return
+
+func set_z(target: int):
+	z_index = target
+
+func get_layer() -> int:
+	return _layer

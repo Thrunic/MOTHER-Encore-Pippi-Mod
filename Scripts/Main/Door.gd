@@ -7,6 +7,8 @@ signal moved_player
 
 export var targetX := 0
 export var targetY := 0
+export var target_layer: = 0
+export var targetZ: = 0
 export var dir := Vector2.ZERO
 export (String, "None", "M3/door_open.wav", "Stairs_Up.mp3", "Stairs_Down.mp3") var sound := "None"
 export (String, "None", "Door_Short.mp3") var end_sound := "None"
@@ -49,6 +51,10 @@ func enter(player := global.get_player()):
 		return
 	_player = player
 	_set_flag()
+
+	for member in global.partyObjects:
+		member.set_layer(target_layer)
+		member.set_z(targetZ)
 
 	global.scene_transition.start_door_transition(self, _player)
 

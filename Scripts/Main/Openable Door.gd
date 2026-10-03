@@ -16,6 +16,7 @@ export (String) var flag = ""
 export (String) var activates_flag = ""
 export (String) var deactivates_flag = ""
 export (bool) var one_way = false
+export (int) var layer = 0 #Collision layer of the door. 0 means use the default layer.
 
 var _unlocked := true
 
@@ -150,5 +151,6 @@ func _is_valid_body_in_area(exclude_body = null) -> bool:
 	var bodies = $Area2D.get_overlapping_bodies()
 	for body in bodies:
 		if body != exclude_body and body is PartyObject:
-			return true
+			if layer == body.get_layer():
+				return true
 	return false
