@@ -5,7 +5,7 @@ article: CAPSULEGUT_ART
 keyitem: false
 cost: 0
 value: 0
-can_consume: [ ninten, ana ]
+can_consume: [ ninten, ana, pippi ]
 actions:
   - name: CAPSULEGUT_ACT1
     function: consume

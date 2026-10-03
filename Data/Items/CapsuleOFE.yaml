@@ -5,7 +5,7 @@ article: CAPSULEOFE_ART
 keyitem: false
 cost: 0
 value: 0
-can_consume: [ ninten, ana, lloyd ]
+can_consume: [ ninten, ana, lloyd, pippi ]
 actions:
   - name: CAPSULEOFE_ACT1
     function: consume
