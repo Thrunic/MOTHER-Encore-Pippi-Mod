@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scripts/debug/DebugStartPos.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/misc/Anim_start.gd" type="Script" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Graphics/Objects/Doors/PippisPlayhouseDoorUpper.png" type="Texture" id=12]
 [ext_resource path="res://Nodes/Ui/effects/melodyBG.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Nodes/Overworld/Objects/Present.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Nodes/Reusables/Reparenter.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Nodes/Reusables/roomshaker.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Nodes/Overworld/Objects/Openable Door.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Tilesets/Interior.tres" type="TileSet" id=18]
@@ -152,9 +151,6 @@ extents = Vector2( 16, 12.625 )
 
 [sub_resource type="RectangleShape2D" id=93]
 extents = Vector2( 24, 12.625 )
-
-[sub_resource type="RectangleShape2D" id=101]
-extents = Vector2( 9.5, 2.5 )
 
 [node name="Pippi\'s House" type="Node2D"]
 script = ExtResource( 3 )
@@ -588,7 +584,7 @@ polygon = PoolVector2Array( 840, 456, 864, 456, 864, 472, 896, 472, 896, 456, 95
 position = Vector2( -816, -280 )
 polygon = PoolVector2Array( 1088, 456, 1088, 472, 1104, 472, 1104, 488, 792, 488, 792, 272, 1184, 272, 1184, 488, 1104, 488, 1104, 472, 1120, 472, 1120, 456, 1144, 456, 1144, 416, 1157, 416, 1146, 359, 1099, 359, 1098, 344, 840, 344, 821, 456, 890.376, 456 )
 
-[node name="CollisionPippisPlayhouse" type="CollisionPolygon2D" parent="Collisions"]
+[node name="CollisionPippisPlayhouseOutside" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -816, -280 )
 polygon = PoolVector2Array( 973, 390, 967, 410, 958, 410, 957, 418, 944, 418, 944, 416, 945, 410, 945, 403, 926, 403, 926, 410, 925, 416, 925, 418, 907, 418, 907, 410, 898, 410, 898, 390 )
 
@@ -599,6 +595,14 @@ polygon = PoolVector2Array( 533, 385, 533, 395, 528, 401, 512, 401, 507, 395, 50
 [node name="CollisionPolygonUpstairs" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -832, 16 )
 polygon = PoolVector2Array( 843, 352, 832, 416, 919, 416, 919, 373, 985, 373, 985, 384, 926, 384, 926, 448, 824, 448, 824, 312, 1080, 312, 1080, 448, 926, 448, 926, 416, 968, 416, 968, 408, 984, 408, 984, 416, 1072, 416, 1061, 352, 1024, 352, 1024, 344, 992, 344, 992, 352 )
+
+[node name="CollisionsLayer17 (Top Floor)" type="StaticBody2D" parent="."]
+collision_layer = 67132
+collision_mask = 0
+
+[node name="CollisionPippisRoom" type="CollisionPolygon2D" parent="CollisionsLayer17 (Top Floor)"]
+position = Vector2( -816, -280 )
+polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 957, 389, 958, 381, 957, 361, 967, 361, 970, 340, 899, 340, 897, 361, 943, 361, 943, 381, 935, 381, 935, 372, 918, 372, 918, 381, 907, 381, 906, 389, 957, 389 )
 
 [node name="Limits" type="Node2D" parent="."]
 visible = false
@@ -768,16 +772,6 @@ __meta__ = {
 
 [node name="Events" type="Node2D" parent="."]
 
-[node name="ReparenterPlayhouseTop" parent="Events" instance=ExtResource( 15 )]
-position = Vector2( 43, 95 )
-object_paths = [ NodePath("../../Ground2/Bridge1"), NodePath("../../BelowPlayer1/Bridge2"), NodePath("../../Objects/Bridge3") ]
-new_parent = NodePath("../../NoCollisions")
-copy_collisions = true
-
-[node name="CollisionShape2D" parent="Events/ReparenterPlayhouseTop" index="0"]
-position = Vector2( 68, 9 )
-shape = SubResource( 101 )
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="Objects/Present1"]
@@ -804,4 +798,3 @@ shape = SubResource( 101 )
 [editable path="MusicArea"]
 [editable path="MusicArea2"]
 [editable path="MusicArea3"]
-[editable path="Events/ReparenterPlayhouseTop"]
