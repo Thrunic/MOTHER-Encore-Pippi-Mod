@@ -753,8 +753,6 @@ func game_over():
 
 # Override
 func ladder():
-	#Stop dashing when we reach a ladder.
-	_anim_state.travel("Idle")
 	_dash_animation_finished()
 	.ladder()
 	_state = MOVE
