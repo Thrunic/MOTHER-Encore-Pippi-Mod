@@ -589,9 +589,9 @@ func _attack_unleash():
 			global.start_joy_vibration(0, 0.35, 0, 0.2)
 			_anim_state.travel("Dash")
 			if _party_member.is_incapacitated():
-				_anim_tree.set("parameters/Bat/TimeScale/scale", 0.7)
+				_anim_tree.set("parameters/Dash/TimeScale/scale", 0.7)
 			else:
-				_anim_tree.set("parameters/Bat/TimeScale/scale", 1)
+				_anim_tree.set("parameters/Dash/TimeScale/scale", 1)
 			_state = MOVE
 		_:
 			_state = MOVE
@@ -602,7 +602,9 @@ func _attack_animation_finished():
 	_tap_run = false
 
 func _dash_animation_finished():
-	$HitboxPivot / DashHitbox / CollisionShape2D.disabled = true
+	$HitboxPivot/DashHitbox/CollisionShape2D.disabled = true
+	$Position/main.visible = true
+	$SpecialAnimations.visible = false
 	_dash = false
 	_set_running(_tap_run)
 	global.can_pause = true
@@ -751,8 +753,12 @@ func game_over():
 
 # Override
 func ladder():
+	#Stop dashing when we reach a ladder.
+	_anim_state.travel("Idle")
+	_dash_animation_finished()
 	.ladder()
 	_state = MOVE
+
 	if audioManager.get_sfx("run") != null:
 		audioManager.get_sfx("run").stop()
 
