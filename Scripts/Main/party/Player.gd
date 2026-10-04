@@ -865,9 +865,9 @@ func exit_camera():
 	set_anim_state("Idle")
 
 func _set_collision_masks(enabled: bool):
-	set_collision_mask_bit(0, enabled)
-	if (_layer == 0): # Vanilla behavior.
-		set_collision_mask_bit(8, enabled)
+	set_collision_mask_bit(8, enabled)
+	if (_layer == 0):
+		set_collision_mask_bit(0, enabled)
 	else:
 		set_collision_mask_bit(_layer - 1, enabled)
 
