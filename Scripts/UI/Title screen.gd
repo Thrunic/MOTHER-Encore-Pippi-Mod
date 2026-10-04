@@ -28,8 +28,7 @@ func _ready():
 	
 	$CanvasLayer/Title/Earth.playing = true
 	if audioManager.get_audio_player(audioManager.get_latest_audio_player_index()).stream != load("res://Audio/Music/Mother Earth.mp3"):
-		audioManager.fadeout_all_music(0.2)
-		audioManager.add_audio_player()
+		audioManager.clear_all_music()
 		audioManager.play_music_on_latest_player("", "Mother Earth.mp3")
 		_anim_player.play("intro1")
 		_can_skip = true

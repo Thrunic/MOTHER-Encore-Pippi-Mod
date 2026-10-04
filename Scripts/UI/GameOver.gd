@@ -26,7 +26,6 @@ func _ready():
 	yield($Timer, "timeout")
 	$AnimationPlayer.play("nintenFall")
 	audioManager.clear_all_music()
-	audioManager.add_audio_player()
 	_game_over_music = audioManager.play_music_on_latest_player("", "Game_Over.ogg")
 	yield($AnimationPlayer, "animation_finished")
 	
@@ -40,11 +39,10 @@ func _end_dialogue(try_again: int):
 	if try_again:
 		$AnimationPlayer.play("nintenGetup")
 		yield($AnimationPlayer, "animation_finished")
-		
+		audioManager.clear_all_music()
 		$AnimationPlayer.play("transitionOut")
 		_fade.fade_in("Fade", Color.white, 0.3)
 		yield($AnimationPlayer, "animation_finished")
-		
 		revive_party()
 		global.goto_respawn()
 		global.update_party_spritesheets()
@@ -59,6 +57,7 @@ func _end_dialogue(try_again: int):
 		$AnimationPlayer.play("transitionOut")
 		_fade.fade_in("Fade", Color.black, 0.2)
 		yield($AnimationPlayer, "animation_finished")
+		audioManager.clear_all_music()
 		$GameOverLayer.hide()
 		$Door.enter()
 		yield($Door, "done")

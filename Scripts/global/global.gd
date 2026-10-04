@@ -8,7 +8,7 @@ signal settings_changed
 signal party_changed
 signal scene_changed
 
-const GAME_VERSION := "0.4.1.0"
+const GAME_VERSION := "0.4.1.1"
 const ACT := 2
 
 const LANGUAGES := ["en", "fr", "it", "ja", "ko", "es", "es_ES", "pt_BR", "pl", "de", "ru", "uk", "zh_Hans_CN"]

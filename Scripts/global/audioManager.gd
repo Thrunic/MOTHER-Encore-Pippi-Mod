@@ -221,6 +221,7 @@ func stop_all_music():
 func clear_all_music():
 	for music_player in get_audio_player_list():
 		if music_player: music_player.queue_free()
+	add_audio_player()
 
 func pause_all_music():
 	if _tween.is_active():
