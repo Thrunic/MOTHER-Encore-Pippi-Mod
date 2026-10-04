@@ -11,6 +11,7 @@ onready var _stat_info_res = preload("res://Nodes/Ui/Battle/DebugStatInfo.tscn")
 var _transition_tween: SceneTreeTween
 var _static := false
 var status_bubble: Control
+var status_bubble_offset: Vector2
 var stat_info = null
 
 func _ready():
@@ -35,7 +36,7 @@ func transition(new_position: Vector2, callback: FuncRef, cb_params: Array):
 	_transition_tween.tween_callback(callback, "call_funcv", [cb_params]).set_delay(0.4)
 
 func move_status_bubble(new_position: Vector2, transition: bool):
-	var new_bubble_height = new_position.y + status_bubble.rect_position.y - status_bubble.get_height()
+	var new_bubble_height = new_position.y + status_bubble_offset.y - status_bubble.get_height()
 	var fixed_height = status_bubble.MAX_HEIGHT + status_bubble.get_height() - new_position.y
 	if new_bubble_height >= status_bubble.MAX_HEIGHT:
 		fixed_height = 24 - rect_size.y / 2
@@ -150,7 +151,9 @@ func set_speech_bubble_pos(dir := _speech_bubble.tail_pos * -1):
 func add_status_bubble(bubble: Control):
 	status_bubble = bubble
 	add_child(status_bubble)
-	status_bubble.rect_position = Vector2(rect_size.x / 2, 24 - rect_size.y / 2)
+	status_bubble_offset = Vector2(rect_size.x / 2, 24 - rect_size.y / 2)
+	status_bubble.rect_position = status_bubble_offset
+	move_status_bubble(rect_position, false)
 
 func add_debug_stat_info(bp):
 	stat_info = _stat_info_res.instance()

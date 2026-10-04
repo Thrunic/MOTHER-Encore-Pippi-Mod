@@ -6260,8 +6260,8 @@ transit_out_anim = "Circle Focus"
 targetScene = "podunk/Church"
 
 [node name="ToMerrysville" parent="Objects/Doors" instance=ExtResource( 1 )]
-position = Vector2( 2488, 1280 )
-scale = Vector2( 2, 8 )
+position = Vector2( 2488, 1272 )
+scale = Vector2( 2, 12 )
 targetX = -664
 targetY = -1432
 transit_in_anim = "Circle Focus"

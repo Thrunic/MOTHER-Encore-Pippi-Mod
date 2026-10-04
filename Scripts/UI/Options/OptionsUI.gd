@@ -150,7 +150,7 @@ func _hide_options():
 	Input.action_release("ui_cancel")
 	emit_signal("back")
 	if _always_visible:
-		$OptionsMenu/Door.enter()
+		_transition_door.enter()
 	else:
 		$OptionsMenu.hide()
 
@@ -269,22 +269,17 @@ func _on_arrow_selected(cursor_index: int):
 			OS.vsync_enabled = !OS.vsync_enabled
 			_cursor.on = true
 		OPTN_SETTINGS_VIEWCREDITSACT1:
-			_enter_credits(PATH_CREDITS_ACT1_SCENE)
+			_enter_transition_door(PATH_CREDITS_ACT1_SCENE)
 		OPTN_SETTINGS_VIEWCREDITSACT2:
-			_enter_credits(PATH_CREDITS_ACT2_SCENE)
+			_enter_transition_door(PATH_CREDITS_ACT2_SCENE)
 		OPTN_SETTINGS_VIEWCREDITSFULL:
-			_enter_credits(PATH_CREDITS_FULL_SCENE)
+			_enter_transition_door(PATH_CREDITS_FULL_SCENE)
 		OPTN_MAIN_TITLE_SCREEN: # Title Screen
 			_confirm_dialog.start_with_options("OPTIONS_TITLESCREEN_CONFIRM", funcref(self, "_on_close_to_title_confirm"))
 		OPTN_MAIN_QUIT: # Close game
 			_confirm_dialog.start_with_options("OPTIONS_QUIT_CONFIRM", funcref(self, "_on_quit_game_confirm"))
 	
 	_refresh_values()
-
-func _enter_credits(credits: String):
-	_transition_door.targetScene = credits
-	_transition_door.enter()
-	audioManager.fadeout_all_music(1)
 
 func _input(event: InputEvent):
 	if _cursor.is_active():
@@ -363,7 +358,7 @@ func _on_arrow_cancel():
 func _on_close_to_title_confirm(answer: bool):
 	if answer:
 		global.save_settings()
-		$OptionsMenu/Door.enter()
+		_enter_transition_door("Title screen")
 		$OptionsMenu.hide()
 		global.stop_playtime()
 		emit_signal("close_to_title")
@@ -422,6 +417,12 @@ func _on_submenu_arrow_cancel():
 	_panel_flavors.hide()
 	_panel_button_prompts.hide()
 	_refresh_values()
+
+func _enter_transition_door(scene):
+	_nav_stack.clear()
+	_transition_door.targetScene = scene
+	_transition_door.enter()
+	audioManager.fadeout_all_music(1)
 
 func _on_door_done():
 	uiManager.close_commands_menu(true)
