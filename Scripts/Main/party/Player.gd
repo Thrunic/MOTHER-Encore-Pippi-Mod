@@ -434,14 +434,13 @@ func interact_with():
 	if collide == null:
 		uiManager.open_dialogue_box("Reusable/noproblem")
 		return
+
 	if "interact" in collide.name: # We probably need a special class for interactions instead of checking for the name
 		var collided = collide.get_parent()
 		for c in [collide, collided]:
 			if !c.has_method("interact"):
 				continue
 			if c.has_method("has_dialog") and !c.has_dialog():
-				return
-			if c is InteractDialog and c.layer != _layer:
 				return
 			global.party_call("try_to_turn",c)
 			c.interact()
