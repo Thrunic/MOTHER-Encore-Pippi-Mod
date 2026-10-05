@@ -434,13 +434,14 @@ func interact_with():
 	if collide == null:
 		uiManager.open_dialogue_box("Reusable/noproblem")
 		return
-	
 	if "interact" in collide.name: # We probably need a special class for interactions instead of checking for the name
 		var collided = collide.get_parent()
 		for c in [collide, collided]:
 			if !c.has_method("interact"):
 				continue
 			if c.has_method("has_dialog") and !c.has_dialog():
+				return
+			if c is InteractDialog and c.layer != _layer:
 				return
 			global.party_call("try_to_turn",c)
 			c.interact()
@@ -870,6 +871,11 @@ func _set_collision_masks(enabled: bool):
 		set_collision_mask_bit(0, enabled)
 	else:
 		set_collision_mask_bit(_layer - 1, enabled)
+
+	if (_layer == 0):
+		eventRayCaster.set_collision_mask(0x1)
+	else:
+		eventRayCaster.set_collision_mask(1 << (_layer - 1))
 
 func _on_BlinkTime_timeout():
 	_idle = true
