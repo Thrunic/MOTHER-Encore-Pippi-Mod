@@ -24,7 +24,10 @@ func _ready():
 	$Timer.start()
 	$GameOverLayer/ColorRect.modulate = Color.black
 	yield($Timer, "timeout")
-	$AnimationPlayer.play("nintenFall")
+	if globaldata.flags.get("ninten_recruitable"):
+		$AnimationPlayer.play("pippiFall")
+	else:
+		$AnimationPlayer.play("nintenFall")
 	audioManager.clear_all_music()
 	_game_over_music = audioManager.play_music_on_latest_player("", "Game_Over.ogg")
 	yield($AnimationPlayer, "animation_finished")
@@ -37,7 +40,10 @@ func _remove_fade_cut():
 func _end_dialogue(try_again: int):
 	if _game_over_music: audioManager.music_fadeout_obj(_game_over_music, 5)
 	if try_again:
-		$AnimationPlayer.play("nintenGetup")
+		if globaldata.flags.get("ninten_recruitable"):
+			$AnimationPlayer.play("pippiGetup")
+		else:
+			$AnimationPlayer.play("nintenGetup")
 		yield($AnimationPlayer, "animation_finished")
 		audioManager.clear_all_music()
 		$AnimationPlayer.play("transitionOut")
@@ -69,7 +75,10 @@ func turn_off_music_changers():
 		musicChanger.stop_music_immediately()
 
 func revive_party():
-	global.set_party_leader(PartyMember.NINTEN)
+	if globaldata.flags.get("ninten_recruitable"):
+		global.set_party_leader(PartyMember.PIPPI)
+	else:
+		global.set_party_leader(PartyMember.NINTEN)
 	for i in global.party:
 		i.remove_all_statuses()
 		if i == global.party[0]:

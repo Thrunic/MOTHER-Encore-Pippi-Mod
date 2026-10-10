@@ -1,4 +1,10 @@
 '0':
+  if:
+    flags:
+      ninten_recruitable: true
+    goto: '11'
+  goto: '1'
+'1':
   sound: Adult
   text: DIALOGUE_REUSABLE_GAMEOVER_0
   goto: '2'
@@ -23,4 +29,30 @@
 '8':
   sound: Adult
   text: DIALOGUE_REUSABLE_GAMEOVER_8
+  set_response: 1
+'11':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_PIPPI_0
+  goto: '12'
+'12':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_2
+  options:
+    DIALOGUE_REUSABLE_GAMEOVER_2-OPT_0: '18'
+    DIALOGUE_REUSABLE_GAMEOVER_2-OPT_1: '13'
+    cancel: '13'
+'13':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_3
+  options:
+    DIALOGUE_REUSABLE_GAMEOVER_5-OPT_0: '16'
+    DIALOGUE_REUSABLE_GAMEOVER_5-OPT_1: '12'
+    cancel: '12'
+'16':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_PIPPI_6
+  set_response: 0
+'18':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_PIPPI_8
   set_response: 1
