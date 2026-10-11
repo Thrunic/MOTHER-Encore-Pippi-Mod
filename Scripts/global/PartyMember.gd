@@ -118,8 +118,10 @@ const PLAYER_LEARN_SKILL_TABLE := {
 		7: ["pkFireA"]
 	},
 	PIPPI: {
+		11: ["curveball", "ricochet"], 
+		16: ["ballFlame"],
 		
-	},
+	}, 
 	TEDDY: {
 		
 	}

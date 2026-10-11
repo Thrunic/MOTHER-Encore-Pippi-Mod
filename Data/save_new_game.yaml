@@ -68,7 +68,9 @@ pippi:
   nickname: ""
   status: []
   inventory: []
-  learnedSkills: []
+  learnedSkills:
+    - strike
+    - splitShot
   level: 1
   exp: 0
   hp: 100
