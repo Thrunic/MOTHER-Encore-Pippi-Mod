@@ -320,8 +320,8 @@
   sound: Kid
   text: DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_35
   options:
-    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_36-OPT_0: '37'
-    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_36-OPT_1: '37'
+    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_35-OPT_0: '37'
+    DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_35-OPT_1: '37'
     cancel: '37'
 '37':
   name: '[Pippi]'
@@ -435,7 +435,6 @@
   goto: '46'
 '46':
   talker: null
-  sound: Adult
   soundeffect: Item Received.mp3
   text: DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_46
   goto: '47'
@@ -510,7 +509,6 @@
   goto: '55'
 '55':
   talker: null
-  sound: Adult
   text: DIALOGUE_PODUNK_CUTSCENES_MAYOR_PIPPI_RESCUE_55
   soundeffect: Item Received.mp3
   goto: '56'
