@@ -182,13 +182,6 @@ collision_layer = 5
 format = 1
 tile_data = PoolIntArray( 8716225, 30, 0 )
 
-[node name="PippisPlayhouseCore" type="TileMap" parent="Below"]
-visible = false
-tile_set = ExtResource( 4 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 458757, 15, 0, 524293, 16, 0 )
-
 [node name="Openable Door Pippis Room" parent="Below" instance=ExtResource( 17 )]
 position = Vector2( 176, 352 )
 sprite = ExtResource( 23 )
