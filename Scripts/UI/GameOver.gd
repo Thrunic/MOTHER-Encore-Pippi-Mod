@@ -24,7 +24,7 @@ func _ready():
 	$Timer.start()
 	$GameOverLayer/ColorRect.modulate = Color.black
 	yield($Timer, "timeout")
-	if globaldata.flags.get("ninten_recruitable"):
+	if _use_pippi_for_gameover():
 		$AnimationPlayer.play("pippiFall")
 	else:
 		$AnimationPlayer.play("nintenFall")
@@ -34,13 +34,19 @@ func _ready():
 	
 	var dialogueBox = uiManager.open_dialogue_box(GAME_OVER_DIALOG, funcref(self, "_end_dialogue"))
 
+#Pippi is used if she is the party leader, or if Ninten is not in the party. If neither Pippi nor Ninten
+#    are in the party, we will get a crash since they are the only two characters with implemented
+#    game over screens and trying to set a party leader who isn't in the party causes issues.
+func _use_pippi_for_gameover() -> bool:
+	return global.party[0].get_name() == "pippi" or (global.has_party_member("pippi") and !global.has_party_member("ninten"))
+
 func _remove_fade_cut():
 	_fade.set_cut(1, 0)
 
 func _end_dialogue(try_again: int):
 	if _game_over_music: audioManager.music_fadeout_obj(_game_over_music, 5)
 	if try_again:
-		if globaldata.flags.get("ninten_recruitable"):
+		if _use_pippi_for_gameover():
 			$AnimationPlayer.play("pippiGetup")
 		else:
 			$AnimationPlayer.play("nintenGetup")
@@ -75,7 +81,7 @@ func turn_off_music_changers():
 		musicChanger.stop_music_immediately()
 
 func revive_party():
-	if globaldata.flags.get("ninten_recruitable"):
+	if _use_pippi_for_gameover():
 		global.set_party_leader(PartyMember.PIPPI)
 	else:
 		global.set_party_leader(PartyMember.NINTEN)
