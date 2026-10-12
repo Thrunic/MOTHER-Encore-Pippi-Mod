@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const GAME_OVER_DIALOG = "Reusable/GameOver"
+const GAME_OVER_DIALOG_PIPPI = "Reusable/GameOverPippi"
 
 var _fade: CanvasLayer
 var _game_over_music: AudioStreamPlayer
@@ -38,7 +39,10 @@ func _ready():
 	_game_over_music = audioManager.play_music_on_latest_player("", "Game_Over.ogg")
 	yield($AnimationPlayer, "animation_finished")
 	
-	var dialogueBox = uiManager.open_dialogue_box(GAME_OVER_DIALOG, funcref(self, "_end_dialogue"))
+	if _use_pippi_for_gameover():
+		var dialogueBox = uiManager.open_dialogue_box(GAME_OVER_DIALOG_PIPPI, funcref(self, "_end_dialogue"))
+	else:
+		var dialogueBox = uiManager.open_dialogue_box(GAME_OVER_DIALOG, funcref(self, "_end_dialogue"))
 
 func _remove_fade_cut():
 	_fade.set_cut(1, 0)

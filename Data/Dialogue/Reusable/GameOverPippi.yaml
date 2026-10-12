@@ -1,0 +1,26 @@
+'0':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_PIPPI_0
+  goto: '1'
+'1':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_2
+  options:
+    DIALOGUE_REUSABLE_GAMEOVER_2-OPT_0: '4'
+    DIALOGUE_REUSABLE_GAMEOVER_2-OPT_1: '2'
+    cancel: '2'
+'2':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_3
+  options:
+    DIALOGUE_REUSABLE_GAMEOVER_5-OPT_0: '3'
+    DIALOGUE_REUSABLE_GAMEOVER_5-OPT_1: '1'
+    cancel: '1'
+'3':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_PIPPI_6
+  set_response: 0
+'4':
+  sound: Adult
+  text: DIALOGUE_REUSABLE_GAMEOVER_PIPPI_8
+  set_response: 1
