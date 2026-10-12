@@ -12,6 +12,12 @@ func _init():
 	_fade = uiManager.get_fade()
 	uiManager.clear_on_screen_enemies()
 
+#Pippi is used if she is the party leader, or if Ninten is not in the party. If neither Pippi nor Ninten
+#    are in the party, we will get a crash since they are the only two characters with implemented
+#    game over screens and trying to set a party leader who isn't in the party causes issues.
+func _use_pippi_for_gameover() -> bool:
+	return global.party[0].get_name() == "pippi" or (global.has_party_member("pippi") and !global.has_party_member("ninten"))
+
 func _ready():
 	turn_off_music_changers()
 	global.get_player().set_collisions(false)
@@ -33,12 +39,6 @@ func _ready():
 	yield($AnimationPlayer, "animation_finished")
 	
 	var dialogueBox = uiManager.open_dialogue_box(GAME_OVER_DIALOG, funcref(self, "_end_dialogue"))
-
-#Pippi is used if she is the party leader, or if Ninten is not in the party. If neither Pippi nor Ninten
-#    are in the party, we will get a crash since they are the only two characters with implemented
-#    game over screens and trying to set a party leader who isn't in the party causes issues.
-func _use_pippi_for_gameover() -> bool:
-	return global.party[0].get_name() == "pippi" or (global.has_party_member("pippi") and !global.has_party_member("ninten"))
 
 func _remove_fade_cut():
 	_fade.set_cut(1, 0)
