@@ -463,6 +463,16 @@ player_turn = {
 }
 button_offset = Vector2( -1, -30 )
 
+[node name="interactHoppetossaPainting" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 95, 365 )
+scale = Vector2( 9, 3 )
+dialog = "Podunk/non-person text/Pippi's house/Hoppetossa Painting"
+player_turn = {
+"x": false,
+"y": false
+}
+button_offset = Vector2( -1, -30 )
+
 [node name="Present1" parent="Objects" instance=ExtResource( 14 )]
 position = Vector2( 128, 1016 )
 flag = "got_diary"
