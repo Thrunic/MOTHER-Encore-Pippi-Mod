@@ -69,6 +69,7 @@ pippi:
   status: []
   inventory: []
   learnedSkills:
+    - telepathy
     - strike
     - splitShot
   level: 1
