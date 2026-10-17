@@ -535,36 +535,36 @@ tile_data = PoolIntArray( 524293, 16, 0 )
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="Ninten_upstairs" parent="Doors" instance=ExtResource( 24 )]
+[node name="Lindgren_upstairs" parent="Doors" instance=ExtResource( 24 )]
 position = Vector2( 412, 378 )
 scale = Vector2( 1, 4 )
 dir = Vector2( -1, 0 )
 sound = "M3/door_open.wav"
 end_sound = "Door_Short.mp3"
 
-[node name="Position2D" parent="Doors/Ninten_upstairs" index="1"]
+[node name="Position2D" parent="Doors/Lindgren_upstairs" index="1"]
 position = Vector2( -192, 3.5 )
 
-[node name="Upstairs_Ninten" parent="Doors" instance=ExtResource( 24 )]
+[node name="Upstairs_Lindgren" parent="Doors" instance=ExtResource( 24 )]
 position = Vector2( 234, 376 )
 scale = Vector2( 1, 4 )
 dir = Vector2( 1, 0 )
 sound = "M3/door_open.wav"
 end_sound = "Door_Short.mp3"
 
-[node name="CollisionShape2D" parent="Doors/Upstairs_Ninten" index="0"]
+[node name="CollisionShape2D" parent="Doors/Upstairs_Lindgren" index="0"]
 position = Vector2( 0, 4 )
 
-[node name="Position2D" parent="Doors/Upstairs_Ninten" index="1"]
+[node name="Position2D" parent="Doors/Upstairs_Lindgren" index="1"]
 position = Vector2( 196, 4.5 )
 
-[node name="Upstair_Pippi" parent="Doors" instance=ExtResource( 24 )]
+[node name="Upstairs_Pippi" parent="Doors" instance=ExtResource( 24 )]
 position = Vector2( 160, 359 )
 scale = Vector2( 4, 1 )
 dir = Vector2( 0, -1 )
 end_sound = "Door_Short.mp3"
 
-[node name="Position2D" parent="Doors/Upstair_Pippi" index="1"]
+[node name="Position2D" parent="Doors/Upstairs_Pippi" index="1"]
 position = Vector2( 32, -183 )
 
 [node name="Pippi_Playhouse_Entrance_Lower" parent="Doors" instance=ExtResource( 24 )]
@@ -618,13 +618,13 @@ position = Vector2( 2, 28 )
 [node name="Position2D" parent="Doors/Pippi_Playhouse_Exit_Upper" index="1"]
 position = Vector2( -72.5, -647 )
 
-[node name="Pippi_Upstair" parent="Doors" instance=ExtResource( 24 )]
+[node name="Pippi_Upstairs" parent="Doors" instance=ExtResource( 24 )]
 position = Vector2( 272, 184 )
 scale = Vector2( 4, 1 )
 dir = Vector2( 0, 1 )
 sound = "M3/door_open.wav"
 
-[node name="Position2D" parent="Doors/Pippi_Upstair" index="1"]
+[node name="Position2D" parent="Doors/Pippi_Upstairs" index="1"]
 position = Vector2( -24, 192 )
 
 [node name="Upstairs_Living" parent="Doors" instance=ExtResource( 24 )]
@@ -688,7 +688,7 @@ polygon = PoolVector2Array( 824, 456, 864, 456, 864, 496, 928, 496, 928, 512, 97
 position = Vector2( -760, 616 )
 polygon = PoolVector2Array( 818, 418, 808, 448, 840, 448, 840, 472, 935, 472, 935, 488, 800, 488, 800, 312, 976, 312, 976, 488, 935, 488, 935, 458, 951, 458, 951, 440, 960, 440, 956, 408, 904, 408, 904, 392, 868, 392, 868, 418, 861, 418, 861, 352, 835, 352, 835, 418 )
 
-[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Collisions"]
+[node name="CollisionLindgrensRoom" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -400, 8 )
 polygon = PoolVector2Array( 856, 440, 824, 440, 824, 472, 904, 472, 904, 448, 933, 448, 933, 439, 952, 439, 952, 488, 792, 488, 792, 272, 1016, 272, 1016, 488, 952, 488, 952, 472, 968, 472, 968, 448, 1000, 448, 984, 360, 952, 360, 952, 352, 920, 352, 920, 344, 840, 344, 840, 360, 821, 360, 813, 416, 856, 416 )
 
@@ -727,10 +727,10 @@ polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 95
 [node name="Limits" type="Node2D" parent="."]
 visible = false
 
-[node name="camarea" parent="Limits" instance=ExtResource( 10 )]
+[node name="camareaLindgrensRoom" parent="Limits" instance=ExtResource( 10 )]
 position = Vector2( 500, 397 )
 
-[node name="CollisionShape2D" parent="Limits/camarea" index="0"]
+[node name="CollisionShape2D" parent="Limits/camareaLindgrensRoom" index="0"]
 position = Vector2( 4, -21 )
 shape = SubResource( 59 )
 
@@ -904,20 +904,20 @@ __meta__ = {
 
 [editable path="Objects/Present1"]
 [editable path="Objects/LadderPlayhouseRoof"]
-[editable path="Doors/Ninten_upstairs"]
-[editable path="Doors/Upstairs_Ninten"]
-[editable path="Doors/Upstair_Pippi"]
+[editable path="Doors/Lindgren_upstairs"]
+[editable path="Doors/Upstairs_Lindgren"]
+[editable path="Doors/Upstairs_Pippi"]
 [editable path="Doors/Pippi_Playhouse_Entrance_Lower"]
 [editable path="Doors/Pippi_Playhouse_Entrance_Upper"]
 [editable path="Doors/Pippi_Playhouse_Exit_Lower"]
 [editable path="Doors/Pippi_Playhouse_Exit_Upper"]
-[editable path="Doors/Pippi_Upstair"]
+[editable path="Doors/Pippi_Upstairs"]
 [editable path="Doors/Upstairs_Living"]
 [editable path="Doors/Living_Upstairs"]
 [editable path="Doors/Living_Basement"]
 [editable path="Doors/Living_Basement2"]
 [editable path="Doors/Podunk"]
-[editable path="Limits/camarea"]
+[editable path="Limits/camareaLindgrensRoom"]
 [editable path="Limits/camareaPippisRoom"]
 [editable path="Limits/camareaPippisPlayhouse"]
 [editable path="Limits/camarea4"]
