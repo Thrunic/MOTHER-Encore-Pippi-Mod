@@ -1,19 +1,26 @@
 '0':
+  actors:
+    pippi: pippi
   if:
     haspartymembers:
       pippi: true
     goto: '1'
   text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_GOLD_0
 '1':
-  talker: Pippi
   name: '[Pippi]'
   sound: Kid
+  talker: pippi
   text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_GOLD_1
   goto: '2'
+  actorsturn:
+    pippi:
+      x: 0
+      y: 1
+      speed: 0.05
 '2':
-  talker: Pippi
   name: '[Pippi]'
   sound: Kid
+  talker: pippi
   text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_GOLD_2
   options:
     DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_GOLD_2-OPT_0: '3'

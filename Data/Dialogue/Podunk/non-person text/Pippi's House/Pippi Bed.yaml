@@ -18,14 +18,21 @@
 '2':
   name: '[Pippi]'
   sound: Kid
+  talker: pippi
   text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_2
   options:
     DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE-YES: '5'
     DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE-NO: '4'
     cancel: '4'
+  actorsturn:
+    pippi:
+      x: 0
+      y: 1
+      speed: 0.05
 '3':
   name: '[Pippi]'
   sound: Kid
+  talker: pippi
   text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_3
   options:
     DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE-YES: '5'
@@ -34,10 +41,12 @@
 '4':
   name: '[Pippi]'
   sound: Kid
+  talker: pippi
   text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_4
 '5':
   name: '[Pippi]'
   sound: Kid
+  talker: pippi
   text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PIPPI_S_BED_5
   goto: '6'
 '6':
