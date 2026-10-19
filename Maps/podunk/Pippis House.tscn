@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Scripts/debug/DebugStartPos.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/misc/Anim_start.gd" type="Script" id=2]
@@ -222,9 +222,6 @@ extents = Vector2( 24, 5 )
 [sub_resource type="RectangleShape2D" id=90]
 extents = Vector2( 352, 540 )
 
-[sub_resource type="RectangleShape2D" id=91]
-extents = Vector2( 25, 10.5 )
-
 [sub_resource type="RectangleShape2D" id=92]
 extents = Vector2( 16, 9.25 )
 
@@ -292,7 +289,7 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1572895, 8, 0, 1769497, 13, 0, 1900550, 4, 0, 1900569, 7, 0, 1900575, 5, 0, 1900579, 6, 0, 3211264, 9, 0, 3211275, 10, 0, 4390915, 11, 0, 4390922, 12, 0 )
+tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1900550, 4, 0, 3211264, 9, 0, 3211275, 10, 0, 4390915, 11, 0, 4390922, 12, 0 )
 
 [node name="PippisPlayhouseCore" type="TileMap" parent="Objects"]
 visible = false
@@ -317,16 +314,15 @@ player_turn = {
 }
 button_offset = Vector2( 2, -40 )
 
-[node name="interact_dialog3" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 584, 456 )
-scale = Vector2( 5, 3 )
-dialog = "Podunk/non-person text/Ninten's house/Old Photos"
-_all_dialog = [ PoolStringArray( "poltergeist", "Reusable/nottime" ), PoolStringArray( "doll_defeated", "Podunk/non-person text/Ninten\'s house/Old Photos" ) ]
+[node name="interactLindgrenNightstand" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 576, 359 )
+scale = Vector2( 3, 4 )
+dialog = "Podunk/non-person text/Pippi's house/Lindgren Nightstand"
 player_turn = {
 "x": false,
 "y": false
 }
-button_offset = Vector2( 0, -10 )
+button_offset = Vector2( 0, -20 )
 
 [node name="interact_dialog7" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 531, 353 )
@@ -690,7 +686,7 @@ polygon = PoolVector2Array( 818, 418, 808, 448, 840, 448, 840, 472, 935, 472, 93
 
 [node name="CollisionLindgrensRoom" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -400, 8 )
-polygon = PoolVector2Array( 856, 440, 824, 440, 824, 472, 904, 472, 904, 448, 933, 448, 933, 439, 952, 439, 952, 488, 792, 488, 792, 272, 1016, 272, 1016, 488, 952, 488, 952, 472, 968, 472, 968, 448, 1000, 448, 984, 360, 952, 360, 952, 352, 920, 352, 920, 344, 840, 344, 840, 360, 821, 360, 813, 416, 856, 416 )
+polygon = PoolVector2Array( 856, 440, 824, 440, 824, 472, 904, 472, 904, 448, 933, 448, 933, 439, 952, 439, 952, 488, 792, 488, 792, 272, 1016, 272, 1016, 488, 952, 488, 952, 472, 968, 472, 968, 448, 1000, 448, 984, 359, 968, 359, 969, 391, 926, 391, 927, 344, 840, 344, 840, 360, 821, 360, 813, 416, 856, 416 )
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -416, -280 )
@@ -857,16 +853,6 @@ exiting_sound = "wood"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stepping Sounds/Stone"]
 polygon = PoolVector2Array( 64, 1008, 48, 1088, 208, 1088, 192, 1008, 112, 1008, 112, 1032, 64, 1032 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Stepping Sounds/Stone"]
-polygon = PoolVector2Array( 480, 376, 552, 376, 560, 440, 472, 440 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Stepping Sounds/Stone"]
-polygon = PoolVector2Array( 72, 88, 152, 88, 160, 152, 72, 152 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stepping Sounds/Stone"]
-position = Vector2( 47, 51 )
-shape = SubResource( 91 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Stepping Sounds/Stone"]
 position = Vector2( 96, 707 )
