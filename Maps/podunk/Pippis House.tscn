@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scripts/debug/DebugStartPos.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/misc/Anim_start.gd" type="Script" id=2]
@@ -19,10 +19,12 @@
 [ext_resource path="res://Nodes/Overworld/Objects/Openable Door.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Tilesets/Interior.tres" type="TileSet" id=18]
 [ext_resource path="res://Graphics/Rooms/Podunk/Pippi's House.png" type="Texture" id=19]
+[ext_resource path="res://Shaders/Outline.shader" type="Shader" id=20]
 [ext_resource path="res://Graphics/Objects/Doors/Door_Dark_Locked.png" type="Texture" id=21]
 [ext_resource path="res://Graphics/Objects/Common/Briefcase.png" type="Texture" id=22]
 [ext_resource path="res://Graphics/Objects/Doors/Door_Dark.png" type="Texture" id=23]
 [ext_resource path="res://Nodes/Overworld/Door.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Nodes/Overworld/jump area.tscn" type="PackedScene" id=25]
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -50,6 +52,72 @@ shader_param/glow_modifier = 0.0
 
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 8, 8.5 )
+
+[sub_resource type="ShaderMaterial" id=104]
+resource_local_to_scene = true
+shader = ExtResource( 20 )
+shader_param/color = Color( 0, 0, 0, 1 )
+shader_param/width = 1.0
+shader_param/pattern = 2
+shader_param/inside = true
+
+[sub_resource type="Animation" id=105]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=106]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
 
 [sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 208, 104 )
@@ -226,7 +294,7 @@ extents = Vector2( 352, 540 )
 extents = Vector2( 16, 9.25 )
 
 [sub_resource type="RectangleShape2D" id=97]
-extents = Vector2( 15, 12.625 )
+extents = Vector2( 35, 17.5 )
 
 [sub_resource type="RectangleShape2D" id=98]
 extents = Vector2( 16, 12.625 )
@@ -508,10 +576,41 @@ type = "map"
 [node name="LadderPlayhouseRoof" parent="Objects" instance=ExtResource( 15 )]
 position = Vector2( 134, 90 )
 z_index = 1
+collision_layer = 65536
 
 [node name="CollisionShape2D" parent="Objects/LadderPlayhouseRoof" index="0"]
 position = Vector2( 0, 1.5 )
 shape = SubResource( 101 )
+
+[node name="Jump Off Playhouse" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 139, 61 )
+jump_height = 25
+player_turn = {
+"x": true,
+"y": false
+}
+
+[node name="Sprite" parent="Objects/Jump Off Playhouse" index="0"]
+material = SubResource( 104 )
+
+[node name="Position2D" parent="Objects/Jump Off Playhouse/Jump Points" index="0"]
+position = Vector2( 50, 54 )
+
+[node name="Inside" parent="Objects/Jump Off Playhouse" index="2"]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="Close" parent="Objects/Jump Off Playhouse" index="3"]
+collision_layer = 65536
+
+[node name="RayCast2D" parent="Objects/Jump Off Playhouse" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Jump Off Playhouse" index="7"]
+anims/Arrow = SubResource( 105 )
+anims/RESET = SubResource( 106 )
 
 [node name="Above" type="TileMap" parent="."]
 z_index = 1
@@ -705,7 +804,7 @@ position = Vector2( -816, -280 )
 polygon = PoolVector2Array( 973, 390, 967, 410, 958, 410, 957, 418, 944, 418, 944, 416, 945, 410, 945, 403, 926, 403, 926, 410, 925, 416, 925, 418, 907, 418, 907, 410, 898, 410, 898, 390 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-position = Vector2( 0, -1 )
+position = Vector2( 157, -4 )
 polygon = PoolVector2Array( 533, 385, 533, 395, 528, 401, 512, 401, 507, 395, 507, 385 )
 
 [node name="CollisionPolygonUpstairs" type="CollisionPolygon2D" parent="Collisions"]
@@ -837,7 +936,6 @@ position = Vector2( 0, 3 )
 shape = SubResource( 94 )
 
 [node name="Stepping Sounds" type="Node2D" parent="."]
-visible = false
 
 [node name="Wood" parent="Stepping Sounds" instance=ExtResource( 9 )]
 entering_sound = "wood"
@@ -870,6 +968,13 @@ shape = SubResource( 98 )
 position = Vector2( 136, 803.375 )
 shape = SubResource( 93 )
 
+[node name="Grass" parent="Stepping Sounds" instance=ExtResource( 9 )]
+exiting_sound = "wood"
+
+[node name="CollisionShape2DPippiPuzzleRug" type="CollisionShape2D" parent="Stepping Sounds/Grass"]
+position = Vector2( 214, 119.5 )
+shape = SubResource( 97 )
+
 [node name="melodyBG" parent="." instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 96, 80 )
@@ -890,6 +995,7 @@ __meta__ = {
 
 [editable path="Objects/Present1"]
 [editable path="Objects/LadderPlayhouseRoof"]
+[editable path="Objects/Jump Off Playhouse"]
 [editable path="Doors/Lindgren_upstairs"]
 [editable path="Doors/Upstairs_Lindgren"]
 [editable path="Doors/Upstairs_Pippi"]

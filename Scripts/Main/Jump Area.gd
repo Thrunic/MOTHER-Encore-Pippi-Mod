@@ -11,6 +11,9 @@ export var player_turn := {
 	"y": true, #Make "x" true if you want the player to turn left/right when jumping
 	"x": true #Make "y" true if you want the player to turn up/down when jumping
 }  #Putting both to true will apply both effects and enable diagonals
+#Note: If using layers, make sure that the collision layer of both the 'Inside' and 'Close' children are set to the player's collision mask.
+export var target_layer := 0 #Layer 0 is vanilla behavior/no layer system. Otherwise sets the player's/followers' layer upon finishing the jump.
+export var targetZ := 0 #z=0 is vanilla behavior. Otherwise sets the player's/followers' Z index upon finishing the jump.
 
 var _is_player_jumping := false
 var _is_player_nearby := false
@@ -90,6 +93,9 @@ func _jump(jumper: PartyObject):
 				global.currentCamera.move_camera(i.global_position + Vector2(0, -7), 0.6)
 		yield(tween, "finished")
 	
+	jumper.set_layer(target_layer)
+	jumper.set_z(targetZ)
+
 	if jumper == global.get_player():
 		global.start_joy_vibration(0, 0.4, 0, 0.2)
 		jumper.set_direction(jumper.get_direction().round())
@@ -100,6 +106,9 @@ func _jump(jumper: PartyObject):
 		_is_player_jumping = false
 		emit_signal("jump")
 		global.reset_party_positions()
+#		for member in global.partyObjects:
+#			member.set_layer(target_layer)
+#			member.set_z(targetZ)
 	else:
 		jumper.set_idle()
 		jumper.active = true
