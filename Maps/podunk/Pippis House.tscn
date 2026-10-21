@@ -936,6 +936,7 @@ position = Vector2( 0, 3 )
 shape = SubResource( 94 )
 
 [node name="Stepping Sounds" type="Node2D" parent="."]
+visible = false
 
 [node name="Wood" parent="Stepping Sounds" instance=ExtResource( 9 )]
 entering_sound = "wood"
@@ -972,7 +973,7 @@ shape = SubResource( 93 )
 exiting_sound = "wood"
 
 [node name="CollisionShape2DPippiPuzzleRug" type="CollisionShape2D" parent="Stepping Sounds/Grass"]
-position = Vector2( 214, 119.5 )
+position = Vector2( 207, 119 )
 shape = SubResource( 97 )
 
 [node name="melodyBG" parent="." instance=ExtResource( 13 )]
