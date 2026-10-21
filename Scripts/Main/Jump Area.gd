@@ -106,9 +106,6 @@ func _jump(jumper: PartyObject):
 		_is_player_jumping = false
 		emit_signal("jump")
 		global.reset_party_positions()
-#		for member in global.partyObjects:
-#			member.set_layer(target_layer)
-#			member.set_z(targetZ)
 	else:
 		jumper.set_idle()
 		jumper.active = true
