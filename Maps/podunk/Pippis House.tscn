@@ -357,7 +357,7 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1900550, 4, 0, 3211264, 9, 0, 3211275, 10, 0, 4390915, 11, 0, 4390922, 12, 0 )
+tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1835035, 20, 0, 1835036, 19, 0, 1900550, 4, 0, 3211264, 9, 0, 3211275, 10, 0, 4390915, 11, 0, 4390922, 12, 0 )
 
 [node name="PippisPlayhouseCore" type="TileMap" parent="Objects"]
 visible = false
@@ -403,16 +403,15 @@ player_turn = {
 }
 button_offset = Vector2( 0, -32 )
 
-[node name="interact_dialog4" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 545, 454 )
-scale = Vector2( 2.678, 2.62 )
-dialog = "Podunk/non-person text/Ninten's house/NES"
-_all_dialog = [ PoolStringArray( "poltergeist", "Reusable/nottime" ), PoolStringArray( "doll_defeated", "Podunk/non-person text/Ninten\'s house/NES" ) ]
+[node name="interactLindgrenTypewriter" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 467, 446 )
+scale = Vector2( 3.5, 4 )
+dialog = "Podunk/non-person text/Pippi's house/Lindgren Typewriter"
 player_turn = {
 "x": false,
 "y": false
 }
-button_offset = Vector2( -2, -10 )
+button_offset = Vector2( 5, -10 )
 
 [node name="interact_dialog6" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 416, 456 )
@@ -425,16 +424,15 @@ player_turn = {
 }
 button_offset = Vector2( -2, -10 )
 
-[node name="interact_dialog2" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 518, 456 )
-scale = Vector2( 4.046, 3.834 )
-dialog = "Podunk/non-person text/Ninten's house/TV"
-_all_dialog = [ PoolStringArray( "poltergeist", "Reusable/nottime" ), PoolStringArray( "doll_defeated", "Podunk/non-person text/Ninten\'s house/TV" ) ]
+[node name="interactLindgrenManuscript" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 495, 446 )
+scale = Vector2( 3.5, 4 )
+dialog = "Podunk/non-person text/Pippi's house/Lindgren Manuscript"
 player_turn = {
 "x": false,
 "y": false
 }
-button_offset = Vector2( 2, -12 )
+button_offset = Vector2( -7, -10 )
 
 [node name="interact_dialog8" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 204, 778 )
@@ -785,7 +783,7 @@ polygon = PoolVector2Array( 818, 418, 808, 448, 840, 448, 840, 472, 935, 472, 93
 
 [node name="CollisionLindgrensRoom" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -400, 8 )
-polygon = PoolVector2Array( 856, 440, 824, 440, 824, 472, 904, 472, 904, 448, 933, 448, 933, 439, 952, 439, 952, 488, 792, 488, 792, 272, 1016, 272, 1016, 488, 952, 488, 952, 472, 968, 472, 968, 448, 1000, 448, 984, 359, 968, 359, 969, 391, 926, 391, 927, 344, 840, 344, 840, 360, 821, 360, 813, 416, 856, 416 )
+polygon = PoolVector2Array( 803, 472, 832, 472, 849, 472, 849, 456, 832, 456.011, 832, 446, 848, 446, 848, 443, 863, 443, 865, 434, 879, 434, 882, 443, 912, 443, 912.019, 472, 952, 472, 952, 488, 792, 488, 792, 272, 1016, 272, 1016, 488, 952, 488, 952, 472, 1004, 472, 1000, 448, 984, 359, 968, 359, 969, 391, 926, 391, 927, 344, 920, 344, 920, 354, 823, 354 )
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -416, -280 )
@@ -936,7 +934,6 @@ position = Vector2( 0, 3 )
 shape = SubResource( 94 )
 
 [node name="Stepping Sounds" type="Node2D" parent="."]
-visible = false
 
 [node name="Wood" parent="Stepping Sounds" instance=ExtResource( 9 )]
 entering_sound = "wood"
@@ -973,7 +970,7 @@ shape = SubResource( 93 )
 exiting_sound = "wood"
 
 [node name="CollisionShape2DPippiPuzzleRug" type="CollisionShape2D" parent="Stepping Sounds/Grass"]
-position = Vector2( 207, 119 )
+position = Vector2( 207, 119.5 )
 shape = SubResource( 97 )
 
 [node name="melodyBG" parent="." instance=ExtResource( 13 )]
