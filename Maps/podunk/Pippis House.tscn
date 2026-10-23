@@ -808,14 +808,24 @@ player_turn = {
 button_offset = Vector2( -3, -28 )
 
 [node name="interactPippiMattress" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 468, 696 )
-scale = Vector2( 6, 4 )
+position = Vector2( 468, 694 )
+scale = Vector2( 6, 3 )
 dialog = "Podunk/non-person text/Pippi's house/Pippi Mattress"
 player_turn = {
 "x": false,
 "y": false
 }
 button_offset = Vector2( 0, -24 )
+
+[node name="interactPippiBook" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 488, 728 )
+scale = Vector2( 3, 3 )
+dialog = "Podunk/non-person text/Pippi's house/Pippi Book"
+player_turn = {
+"x": false,
+"y": false
+}
+button_offset = Vector2( 0, -12 )
 
 [node name="interactDrawingTommy" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 144, 59 )
@@ -1289,10 +1299,6 @@ polygon = PoolVector2Array( 1022, 528, 792, 528, 793, 306, 1022, 305, 1022, 528,
 [node name="CollisionPippisPlayhouseOutside" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -816, -280 )
 polygon = PoolVector2Array( 973, 390, 967, 410, 958, 410, 957, 418, 944, 418, 944, 416, 945, 410, 945, 403, 926, 403, 926, 410, 925, 416, 925, 418, 907, 418, 907, 410, 898, 410, 898, 390 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
-position = Vector2( 157, -4 )
-polygon = PoolVector2Array( 533, 385, 533, 395, 528, 401, 512, 401, 507, 395, 507, 385 )
 
 [node name="CollisionPolygonUpstairs" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -832, 16 )
