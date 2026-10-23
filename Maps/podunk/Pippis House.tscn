@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Scripts/debug/DebugStartPos.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/misc/Anim_start.gd" type="Script" id=2]
@@ -61,6 +61,9 @@ shader_param/width = 1.0
 shader_param/pattern = 2
 shader_param/inside = true
 
+[sub_resource type="RectangleShape2D" id=121]
+extents = Vector2( 6, 7 )
+
 [sub_resource type="Animation" id=105]
 resource_name = "Arrow"
 length = 1.16667
@@ -92,6 +95,317 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=106]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
+
+[sub_resource type="Animation" id=107]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=108]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
+
+[sub_resource type="RectangleShape2D" id=120]
+extents = Vector2( 20, 4 )
+
+[sub_resource type="CircleShape2D" id=122]
+radius = 32.0
+
+[sub_resource type="Animation" id=109]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
+
+[sub_resource type="RectangleShape2D" id=119]
+extents = Vector2( 5, 7 )
+
+[sub_resource type="CircleShape2D" id=123]
+radius = 32.0
+
+[sub_resource type="Animation" id=111]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=112]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
+
+[sub_resource type="RectangleShape2D" id=118]
+extents = Vector2( 3, 5 )
+
+[sub_resource type="Animation" id=113]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=114]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
+
+[sub_resource type="RectangleShape2D" id=117]
+extents = Vector2( 26, 1.5 )
+
+[sub_resource type="CircleShape2D" id=124]
+radius = 32.0
+
+[sub_resource type="Animation" id=115]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=116]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -596,6 +910,9 @@ position = Vector2( 50, 54 )
 collision_layer = 65536
 collision_mask = 0
 
+[node name="CollisionShape2D" parent="Objects/Jump Off Playhouse/Inside" index="0"]
+shape = SubResource( 121 )
+
 [node name="Close" parent="Objects/Jump Off Playhouse" index="3"]
 collision_layer = 65536
 
@@ -607,6 +924,180 @@ __meta__ = {
 [node name="AnimationPlayer" parent="Objects/Jump Off Playhouse" index="7"]
 anims/Arrow = SubResource( 105 )
 anims/RESET = SubResource( 106 )
+
+[node name="Lindgren Floor to Bed" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 514, 374 )
+jump_height = 25
+player_turn = {
+"x": true,
+"y": true
+}
+target_layer = 17
+
+[node name="Sprite" parent="Objects/Lindgren Floor to Bed" index="0"]
+material = SubResource( 104 )
+
+[node name="Position2D" parent="Objects/Lindgren Floor to Bed/Jump Points" index="0"]
+position = Vector2( 28, 3 )
+
+[node name="RayCast2D" parent="Objects/Lindgren Floor to Bed" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Lindgren Floor to Bed" index="7"]
+anims/Arrow = SubResource( 107 )
+anims/RESET = SubResource( 108 )
+
+[node name="Lindgren Bed to Floor" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 539, 378 )
+jump_height = 25
+player_turn = {
+"x": true,
+"y": true
+}
+
+[node name="Sprite" parent="Objects/Lindgren Bed to Floor" index="0"]
+material = SubResource( 104 )
+
+[node name="Position2D" parent="Objects/Lindgren Bed to Floor/Jump Points" index="0"]
+position = Vector2( 8, 29 )
+
+[node name="Inside" parent="Objects/Lindgren Bed to Floor" index="2"]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Bed to Floor/Inside" index="0"]
+shape = SubResource( 120 )
+
+[node name="Close" parent="Objects/Lindgren Bed to Floor" index="3"]
+position = Vector2( 0, 26 )
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 65536
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Bed to Floor/Close" index="0"]
+shape = SubResource( 122 )
+
+[node name="RayCast2D" parent="Objects/Lindgren Bed to Floor" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Lindgren Bed to Floor" index="7"]
+anims/Arrow = SubResource( 109 )
+anims/RESET = SubResource( 110 )
+
+[node name="Lindgren Bed to Bookshelf" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 525, 341 )
+jump_height = 25
+player_turn = {
+"x": true,
+"y": false
+}
+target_layer = 18
+
+[node name="Sprite" parent="Objects/Lindgren Bed to Bookshelf" index="0"]
+material = SubResource( 104 )
+
+[node name="Position2D" parent="Objects/Lindgren Bed to Bookshelf/Jump Points" index="0"]
+position = Vector2( -12, -22 )
+
+[node name="Inside" parent="Objects/Lindgren Bed to Bookshelf" index="2"]
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Bed to Bookshelf/Inside" index="0"]
+shape = SubResource( 119 )
+
+[node name="Close" parent="Objects/Lindgren Bed to Bookshelf" index="3"]
+visible = true
+collision_layer = 65536
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Bed to Bookshelf/Close" index="0"]
+scale = Vector2( 0.75, 0.75 )
+shape = SubResource( 123 )
+
+[node name="RayCast2D" parent="Objects/Lindgren Bed to Bookshelf" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Lindgren Bed to Bookshelf" index="7"]
+anims/Arrow = SubResource( 111 )
+anims/RESET = SubResource( 112 )
+
+[node name="Lindgren Bookshelf to Bed" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 509, 311 )
+jump_height = 25
+player_turn = {
+"x": true,
+"y": true
+}
+target_layer = 17
+
+[node name="Sprite" parent="Objects/Lindgren Bookshelf to Bed" index="0"]
+material = SubResource( 104 )
+
+[node name="Position2D" parent="Objects/Lindgren Bookshelf to Bed/Jump Points" index="0"]
+position = Vector2( 39, 59 )
+
+[node name="Inside" parent="Objects/Lindgren Bookshelf to Bed" index="2"]
+collision_layer = 131072
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Bookshelf to Bed/Inside" index="0"]
+position = Vector2( 8, 7 )
+shape = SubResource( 118 )
+
+[node name="Close" parent="Objects/Lindgren Bookshelf to Bed" index="3"]
+scale = Vector2( 0.7, 0.7 )
+collision_layer = 131072
+
+[node name="RayCast2D" parent="Objects/Lindgren Bookshelf to Bed" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Lindgren Bookshelf to Bed" index="7"]
+anims/Arrow = SubResource( 113 )
+anims/RESET = SubResource( 114 )
+
+[node name="Lindgren Bookshelf to Floor" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 441, 311 )
+jump_height = 25
+player_turn = {
+"x": true,
+"y": true
+}
+
+[node name="Sprite" parent="Objects/Lindgren Bookshelf to Floor" index="0"]
+material = SubResource( 104 )
+
+[node name="Position2D" parent="Objects/Lindgren Bookshelf to Floor/Jump Points" index="0"]
+position = Vector2( 9, 61 )
+
+[node name="Inside" parent="Objects/Lindgren Bookshelf to Floor" index="2"]
+collision_layer = 131072
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Bookshelf to Floor/Inside" index="0"]
+position = Vector2( 9, 10.5 )
+shape = SubResource( 117 )
+
+[node name="Close" parent="Objects/Lindgren Bookshelf to Floor" index="3"]
+collision_layer = 131072
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Bookshelf to Floor/Close" index="0"]
+shape = SubResource( 124 )
+
+[node name="RayCast2D" parent="Objects/Lindgren Bookshelf to Floor" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Lindgren Bookshelf to Floor" index="7"]
+anims/Arrow = SubResource( 115 )
+anims/RESET = SubResource( 116 )
 
 [node name="Above" type="TileMap" parent="."]
 z_index = 1
@@ -807,13 +1298,25 @@ polygon = PoolVector2Array( 533, 385, 533, 395, 528, 401, 512, 401, 507, 395, 50
 position = Vector2( -832, 16 )
 polygon = PoolVector2Array( 843, 352, 832, 416, 919, 416, 919, 373, 985, 373, 985, 384, 926, 384, 926, 448, 824, 448, 824, 312, 1080, 312, 1080, 448, 926, 448, 926, 416, 968, 416, 968, 408, 984, 408, 984, 416, 1072, 416, 1061, 352, 1024, 352, 1024, 344, 992, 344, 992, 352 )
 
-[node name="CollisionsLayer17 (Top Floor)" type="StaticBody2D" parent="."]
+[node name="CollisionsLayer17" type="StaticBody2D" parent="."]
 collision_layer = 67132
 collision_mask = 0
 
-[node name="CollisionPippisPlayhouseUpper" type="CollisionPolygon2D" parent="CollisionsLayer17 (Top Floor)"]
+[node name="CollisionPippisPlayhouseUpper" type="CollisionPolygon2D" parent="CollisionsLayer17"]
 position = Vector2( -816, -280 )
 polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 957, 389, 958, 381, 959, 361, 967, 361, 970, 340, 899, 340, 897, 361, 942, 361, 942, 381, 935, 381, 935, 372, 918, 372, 918, 381, 907, 381, 906, 389, 957, 389 )
+
+[node name="CollisionLindgrensBed" type="CollisionPolygon2D" parent="CollisionsLayer17"]
+position = Vector2( -386, -5 )
+polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 954, 394, 953, 348, 913, 347, 913, 394, 954, 394 )
+
+[node name="CollisionsLayer18" type="StaticBody2D" parent="."]
+collision_layer = 132668
+collision_mask = 0
+
+[node name="CollisionLindgrensBookshelf" type="CollisionPolygon2D" parent="CollisionsLayer18"]
+position = Vector2( -460, -40 )
+polygon = PoolVector2Array( 1002, 423, 867, 422, 867, 322, 1001, 322, 1002, 423, 979, 363, 980, 354, 885, 354, 885, 363, 979, 363 )
 
 [node name="Limits" type="Node2D" parent="."]
 visible = false
@@ -992,6 +1495,11 @@ __meta__ = {
 [editable path="Objects/Present1"]
 [editable path="Objects/LadderPlayhouseRoof"]
 [editable path="Objects/Jump Off Playhouse"]
+[editable path="Objects/Lindgren Floor to Bed"]
+[editable path="Objects/Lindgren Bed to Floor"]
+[editable path="Objects/Lindgren Bed to Bookshelf"]
+[editable path="Objects/Lindgren Bookshelf to Bed"]
+[editable path="Objects/Lindgren Bookshelf to Floor"]
 [editable path="Doors/Lindgren_upstairs"]
 [editable path="Doors/Upstairs_Lindgren"]
 [editable path="Doors/Upstairs_Pippi"]
