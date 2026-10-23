@@ -371,16 +371,25 @@ position = Vector2( 148, 677 )
 dialog = "Reusable/phonenoanswer"
 _all_dialog = [ PoolStringArray( "phone_ring", "Podunk/dad_poltergeist" ), PoolStringArray( "talked_to_dad", "Reusable/dad_normal" ) ]
 
-[node name="interact_dialog" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 503, 349 )
-scale = Vector2( 5, 2 )
-dialog = "Podunk/non-person text/Ninten's house/Pinboard"
-_all_dialog = [ PoolStringArray( "poltergeist", "Reusable/nottime" ), PoolStringArray( "doll_defeated", "Podunk/non-person text/Ninten\'s house/Pinboard" ) ]
+[node name="interactLindgrenBookshelfLeft" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 448, 362 )
+scale = Vector2( 6, 2 )
+dialog = "Podunk/non-person text/Pippi's House/Lindgren Bookshelf Left"
 player_turn = {
 "x": false,
-"y": true
+"y": false
 }
-button_offset = Vector2( 2, -40 )
+button_offset = Vector2( 0, -40 )
+
+[node name="interactLindgrenBookshelfRight" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 496, 362 )
+scale = Vector2( 6, 2 )
+dialog = "Podunk/non-person text/Pippi's House/Lindgren Bookshelf Right"
+player_turn = {
+"x": false,
+"y": false
+}
+button_offset = Vector2( 0, -40 )
 
 [node name="interactLindgrenNightstand" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 576, 359 )
@@ -392,17 +401,6 @@ player_turn = {
 }
 button_offset = Vector2( 0, -20 )
 
-[node name="interact_dialog7" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 531, 353 )
-scale = Vector2( 2, 3 )
-dialog = "Podunk/non-person text/Ninten's house/Electric Guitar"
-_all_dialog = [ PoolStringArray( "poltergeist", "Reusable/nottime" ), PoolStringArray( "doll_defeated", "Podunk/non-person text/Ninten\'s house/Electric Guitar" ) ]
-player_turn = {
-"x": false,
-"y": false
-}
-button_offset = Vector2( 0, -32 )
-
 [node name="interactLindgrenTypewriter" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 467, 446 )
 scale = Vector2( 3.5, 4 )
@@ -412,6 +410,16 @@ player_turn = {
 "y": false
 }
 button_offset = Vector2( 5, -10 )
+
+[node name="interactLindgrenManuscript" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 495, 446 )
+scale = Vector2( 3.5, 4 )
+dialog = "Podunk/non-person text/Pippi's house/Lindgren Manuscript"
+player_turn = {
+"x": false,
+"y": false
+}
+button_offset = Vector2( -7, -10 )
 
 [node name="interact_dialog6" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 416, 456 )
@@ -423,16 +431,6 @@ player_turn = {
 "y": false
 }
 button_offset = Vector2( -2, -10 )
-
-[node name="interactLindgrenManuscript" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 495, 446 )
-scale = Vector2( 3.5, 4 )
-dialog = "Podunk/non-person text/Pippi's house/Lindgren Manuscript"
-player_turn = {
-"x": false,
-"y": false
-}
-button_offset = Vector2( -7, -10 )
 
 [node name="interact_dialog8" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 204, 778 )
