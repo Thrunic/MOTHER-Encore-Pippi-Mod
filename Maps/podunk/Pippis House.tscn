@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Scripts/debug/DebugStartPos.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/misc/Anim_start.gd" type="Script" id=2]
@@ -53,7 +53,7 @@ shader_param/glow_modifier = 0.0
 [sub_resource type="RectangleShape2D" id=101]
 extents = Vector2( 8, 8.5 )
 
-[sub_resource type="ShaderMaterial" id=104]
+[sub_resource type="ShaderMaterial" id=125]
 resource_local_to_scene = true
 shader = ExtResource( 20 )
 shader_param/color = Color( 0, 0, 0, 1 )
@@ -61,10 +61,7 @@ shader_param/width = 1.0
 shader_param/pattern = 2
 shader_param/inside = true
 
-[sub_resource type="RectangleShape2D" id=121]
-extents = Vector2( 6, 7 )
-
-[sub_resource type="Animation" id=105]
+[sub_resource type="Animation" id=136]
 resource_name = "Arrow"
 length = 1.16667
 loop = true
@@ -94,7 +91,7 @@ tracks/1/keys = {
 "values": [ 0.0, -25.0, 0.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=106]
+[sub_resource type="Animation" id=137]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -122,7 +119,7 @@ tracks/1/keys = {
 "values": [ -20.2 ]
 }
 
-[sub_resource type="Animation" id=107]
+[sub_resource type="Animation" id=134]
 resource_name = "Arrow"
 length = 1.16667
 loop = true
@@ -152,7 +149,7 @@ tracks/1/keys = {
 "values": [ 0.0, -25.0, 0.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=108]
+[sub_resource type="Animation" id=135]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -180,13 +177,7 @@ tracks/1/keys = {
 "values": [ -20.2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=120]
-extents = Vector2( 20, 4 )
-
-[sub_resource type="CircleShape2D" id=122]
-radius = 32.0
-
-[sub_resource type="Animation" id=109]
+[sub_resource type="Animation" id=132]
 resource_name = "Arrow"
 length = 1.16667
 loop = true
@@ -216,7 +207,7 @@ tracks/1/keys = {
 "values": [ 0.0, -25.0, 0.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=110]
+[sub_resource type="Animation" id=133]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -244,13 +235,7 @@ tracks/1/keys = {
 "values": [ -20.2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=119]
-extents = Vector2( 5, 7 )
-
-[sub_resource type="CircleShape2D" id=123]
-radius = 32.0
-
-[sub_resource type="Animation" id=111]
+[sub_resource type="Animation" id=130]
 resource_name = "Arrow"
 length = 1.16667
 loop = true
@@ -280,7 +265,7 @@ tracks/1/keys = {
 "values": [ 0.0, -25.0, 0.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=112]
+[sub_resource type="Animation" id=131]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -308,10 +293,7 @@ tracks/1/keys = {
 "values": [ -20.2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=118]
-extents = Vector2( 3, 5 )
-
-[sub_resource type="Animation" id=113]
+[sub_resource type="Animation" id=128]
 resource_name = "Arrow"
 length = 1.16667
 loop = true
@@ -341,7 +323,7 @@ tracks/1/keys = {
 "values": [ 0.0, -25.0, 0.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=114]
+[sub_resource type="Animation" id=129]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -369,13 +351,7 @@ tracks/1/keys = {
 "values": [ -20.2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=117]
-extents = Vector2( 26, 1.5 )
-
-[sub_resource type="CircleShape2D" id=124]
-radius = 32.0
-
-[sub_resource type="Animation" id=115]
+[sub_resource type="Animation" id=126]
 resource_name = "Arrow"
 length = 1.16667
 loop = true
@@ -405,7 +381,7 @@ tracks/1/keys = {
 "values": [ 0.0, -25.0, 0.0, 25.0 ]
 }
 
-[sub_resource type="Animation" id=116]
+[sub_resource type="Animation" id=127]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
@@ -903,25 +879,27 @@ position = Vector2( 0, 1.5 )
 shape = SubResource( 101 )
 
 [node name="Jump Off Playhouse" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 139, 61 )
+position = Vector2( 148, 67 )
+z_index = 1
 jump_height = 25
 player_turn = {
 "x": true,
-"y": false
+"y": true
 }
 
 [node name="Sprite" parent="Objects/Jump Off Playhouse" index="0"]
-material = SubResource( 104 )
+material = SubResource( 125 )
 
 [node name="Position2D" parent="Objects/Jump Off Playhouse/Jump Points" index="0"]
-position = Vector2( 50, 54 )
+position = Vector2( 41, 48 )
 
 [node name="Inside" parent="Objects/Jump Off Playhouse" index="2"]
+position = Vector2( -4, -4 )
 collision_layer = 65536
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Objects/Jump Off Playhouse/Inside" index="0"]
-shape = SubResource( 121 )
+scale = Vector2( 0.5, 1.4 )
 
 [node name="Close" parent="Objects/Jump Off Playhouse" index="3"]
 collision_layer = 65536
@@ -932,11 +910,11 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="Objects/Jump Off Playhouse" index="7"]
-anims/Arrow = SubResource( 105 )
-anims/RESET = SubResource( 106 )
+anims/Arrow = SubResource( 136 )
+anims/RESET = SubResource( 137 )
 
 [node name="Lindgren Floor to Bed" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 514, 374 )
+position = Vector2( 518, 378 )
 jump_height = 25
 player_turn = {
 "x": true,
@@ -945,10 +923,16 @@ player_turn = {
 target_layer = 17
 
 [node name="Sprite" parent="Objects/Lindgren Floor to Bed" index="0"]
-material = SubResource( 104 )
+material = SubResource( 125 )
 
 [node name="Position2D" parent="Objects/Lindgren Floor to Bed/Jump Points" index="0"]
-position = Vector2( 28, 3 )
+position = Vector2( 22, -4 )
+
+[node name="Inside" parent="Objects/Lindgren Floor to Bed" index="2"]
+position = Vector2( -4, -4 )
+
+[node name="CollisionShape2D" parent="Objects/Lindgren Floor to Bed/Inside" index="0"]
+scale = Vector2( 0.5, 1.6 )
 
 [node name="RayCast2D" parent="Objects/Lindgren Floor to Bed" index="6"]
 __meta__ = {
@@ -956,11 +940,11 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="Objects/Lindgren Floor to Bed" index="7"]
-anims/Arrow = SubResource( 107 )
-anims/RESET = SubResource( 108 )
+anims/Arrow = SubResource( 134 )
+anims/RESET = SubResource( 135 )
 
 [node name="Lindgren Bed to Floor" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 539, 378 )
+position = Vector2( 543, 386 )
 jump_height = 25
 player_turn = {
 "x": true,
@@ -968,25 +952,21 @@ player_turn = {
 }
 
 [node name="Sprite" parent="Objects/Lindgren Bed to Floor" index="0"]
-material = SubResource( 104 )
+material = SubResource( 125 )
 
 [node name="Position2D" parent="Objects/Lindgren Bed to Floor/Jump Points" index="0"]
-position = Vector2( 8, 29 )
+position = Vector2( 4, 21 )
 
 [node name="Inside" parent="Objects/Lindgren Bed to Floor" index="2"]
+position = Vector2( -4, -4 )
 collision_layer = 65536
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Objects/Lindgren Bed to Floor/Inside" index="0"]
-shape = SubResource( 120 )
+scale = Vector2( 3, 1 )
 
 [node name="Close" parent="Objects/Lindgren Bed to Floor" index="3"]
-position = Vector2( 0, 26 )
-scale = Vector2( 1.5, 1.5 )
 collision_layer = 65536
-
-[node name="CollisionShape2D" parent="Objects/Lindgren Bed to Floor/Close" index="0"]
-shape = SubResource( 122 )
 
 [node name="RayCast2D" parent="Objects/Lindgren Bed to Floor" index="6"]
 __meta__ = {
@@ -994,38 +974,31 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="Objects/Lindgren Bed to Floor" index="7"]
-anims/Arrow = SubResource( 109 )
-anims/RESET = SubResource( 110 )
+anims/Arrow = SubResource( 132 )
+anims/RESET = SubResource( 133 )
 
 [node name="Lindgren Bed to Bookshelf" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 525, 341 )
+position = Vector2( 529, 345 )
 jump_height = 25
 player_turn = {
 "x": true,
-"y": false
+"y": true
 }
 target_layer = 18
 
 [node name="Sprite" parent="Objects/Lindgren Bed to Bookshelf" index="0"]
-material = SubResource( 104 )
+material = SubResource( 125 )
 
 [node name="Position2D" parent="Objects/Lindgren Bed to Bookshelf/Jump Points" index="0"]
-position = Vector2( -12, -22 )
+position = Vector2( -15, -27 )
 
 [node name="Inside" parent="Objects/Lindgren Bed to Bookshelf" index="2"]
+position = Vector2( -4, -4 )
 collision_layer = 65536
 collision_mask = 0
 
-[node name="CollisionShape2D" parent="Objects/Lindgren Bed to Bookshelf/Inside" index="0"]
-shape = SubResource( 119 )
-
 [node name="Close" parent="Objects/Lindgren Bed to Bookshelf" index="3"]
-visible = true
 collision_layer = 65536
-
-[node name="CollisionShape2D" parent="Objects/Lindgren Bed to Bookshelf/Close" index="0"]
-scale = Vector2( 0.75, 0.75 )
-shape = SubResource( 123 )
 
 [node name="RayCast2D" parent="Objects/Lindgren Bed to Bookshelf" index="6"]
 __meta__ = {
@@ -1033,11 +1006,11 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="Objects/Lindgren Bed to Bookshelf" index="7"]
-anims/Arrow = SubResource( 111 )
-anims/RESET = SubResource( 112 )
+anims/Arrow = SubResource( 130 )
+anims/RESET = SubResource( 131 )
 
 [node name="Lindgren Bookshelf to Bed" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 509, 311 )
+position = Vector2( 512, 314 )
 jump_height = 25
 player_turn = {
 "x": true,
@@ -1046,21 +1019,20 @@ player_turn = {
 target_layer = 17
 
 [node name="Sprite" parent="Objects/Lindgren Bookshelf to Bed" index="0"]
-material = SubResource( 104 )
+material = SubResource( 125 )
 
 [node name="Position2D" parent="Objects/Lindgren Bookshelf to Bed/Jump Points" index="0"]
-position = Vector2( 39, 59 )
+position = Vector2( 36, 49 )
 
 [node name="Inside" parent="Objects/Lindgren Bookshelf to Bed" index="2"]
+position = Vector2( -4, -4 )
 collision_layer = 131072
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Objects/Lindgren Bookshelf to Bed/Inside" index="0"]
-position = Vector2( 8, 7 )
-shape = SubResource( 118 )
+scale = Vector2( 0.5, 1 )
 
 [node name="Close" parent="Objects/Lindgren Bookshelf to Bed" index="3"]
-scale = Vector2( 0.7, 0.7 )
 collision_layer = 131072
 
 [node name="RayCast2D" parent="Objects/Lindgren Bookshelf to Bed" index="6"]
@@ -1069,11 +1041,11 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="Objects/Lindgren Bookshelf to Bed" index="7"]
-anims/Arrow = SubResource( 113 )
-anims/RESET = SubResource( 114 )
+anims/Arrow = SubResource( 128 )
+anims/RESET = SubResource( 129 )
 
 [node name="Lindgren Bookshelf to Floor" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 441, 311 )
+position = Vector2( 441, 316 )
 jump_height = 25
 player_turn = {
 "x": true,
@@ -1081,24 +1053,21 @@ player_turn = {
 }
 
 [node name="Sprite" parent="Objects/Lindgren Bookshelf to Floor" index="0"]
-material = SubResource( 104 )
+material = SubResource( 125 )
 
 [node name="Position2D" parent="Objects/Lindgren Bookshelf to Floor/Jump Points" index="0"]
 position = Vector2( 9, 61 )
 
 [node name="Inside" parent="Objects/Lindgren Bookshelf to Floor" index="2"]
+position = Vector2( -4, -4 )
 collision_layer = 131072
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="Objects/Lindgren Bookshelf to Floor/Inside" index="0"]
-position = Vector2( 9, 10.5 )
-shape = SubResource( 117 )
+scale = Vector2( 3.5, 1 )
 
 [node name="Close" parent="Objects/Lindgren Bookshelf to Floor" index="3"]
 collision_layer = 131072
-
-[node name="CollisionShape2D" parent="Objects/Lindgren Bookshelf to Floor/Close" index="0"]
-shape = SubResource( 124 )
 
 [node name="RayCast2D" parent="Objects/Lindgren Bookshelf to Floor" index="6"]
 __meta__ = {
@@ -1106,8 +1075,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" parent="Objects/Lindgren Bookshelf to Floor" index="7"]
-anims/Arrow = SubResource( 115 )
-anims/RESET = SubResource( 116 )
+anims/Arrow = SubResource( 126 )
+anims/RESET = SubResource( 127 )
 
 [node name="Above" type="TileMap" parent="."]
 z_index = 1
