@@ -773,6 +773,26 @@ player_turn = {
 }
 button_offset = Vector2( 0, -44 )
 
+[node name="interactDrawingTommy" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 144, 59 )
+scale = Vector2( 4, 3 )
+dialog = "Podunk/non-person text/Pippi's house/Drawing Tommy"
+player_turn = {
+"x": false,
+"y": false
+}
+button_offset = Vector2( 1, -44 )
+
+[node name="interactPippiToys" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 41, 74 )
+scale = Vector2( 8, 6 )
+dialog = "Podunk/non-person text/Pippi's house/Pippi Toys"
+player_turn = {
+"x": false,
+"y": false
+}
+button_offset = Vector2( 10, -36 )
+
 [node name="interactPippiGold" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 404, 700 )
 scale = Vector2( 4, 3 )
@@ -802,16 +822,6 @@ player_turn = {
 "y": false
 }
 button_offset = Vector2( 0, -12 )
-
-[node name="interactDrawingTommy" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 144, 59 )
-scale = Vector2( 4, 3 )
-dialog = "Podunk/non-person text/Pippi's house/Drawing Tommy"
-player_turn = {
-"x": false,
-"y": false
-}
-button_offset = Vector2( 1, -44 )
 
 [node name="interactPippiBed" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 307, 76 )
@@ -1259,7 +1269,7 @@ polygon = PoolVector2Array( 840, 456, 864, 456, 864, 472, 896, 472, 896, 456, 95
 
 [node name="CollisionPippisRoom" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -816, -280 )
-polygon = PoolVector2Array( 1088, 456, 1088, 472, 1104, 472, 1104, 488, 792, 488, 792, 272, 1184, 272, 1184, 488, 1104, 488, 1104, 472, 1120, 472, 1120, 456, 1144, 456, 1144, 416, 1157, 416, 1146, 359, 1099, 359, 1098, 344, 840, 344, 821, 456, 890.376, 456 )
+polygon = PoolVector2Array( 1088, 456, 1088, 472, 1104, 472, 1104, 488, 792, 488, 792, 272, 1184, 272, 1184, 488, 1104, 488, 1104, 472, 1120, 472, 1120, 456, 1144, 456, 1144, 416, 1157, 416, 1146, 359, 1099, 359, 1098, 344, 886.284, 344, 886, 359, 855, 359, 855, 352, 838.675, 351.811, 821, 456, 890.376, 456 )
 
 [node name="CollisionPippisPlayhouseInside" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -450, 312 )
