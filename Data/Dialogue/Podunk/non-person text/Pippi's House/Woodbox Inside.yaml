@@ -1,0 +1,38 @@
+'0':
+  actors:
+    pippi: pippi
+  if:
+    haspartymembers:
+      pippi: true
+    goto: '1'
+  goto: '2'
+
+'1':
+  name: '[Pippi]'
+  sound: Kid
+  talker: pippi
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_INSIDE_0
+  actorsturn:
+    pippi:
+      x: 0
+      y: 1
+      speed: 0.05
+  if:
+    flags:
+      woodbox_item_received: true
+    goto: 'end'
+  goto: '2'
+'2':
+  talker: null
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_INSIDE_1
+  if:
+    invspace: true
+    goto: '3'
+  goto: '4'
+'3':
+  item: HairTiesCanary
+  setflags: woodbox_item_received
+  soundeffect: Item Received.mp3
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_INSIDE_2
+'4':
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_INSIDE_3

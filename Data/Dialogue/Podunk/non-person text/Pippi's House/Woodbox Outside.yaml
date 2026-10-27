@@ -1,0 +1,19 @@
+'0':
+  actors:
+    pippi: pippi
+  if:
+    haspartymembers:
+      pippi: true
+    goto: '1'
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_OUTSIDE_0
+
+'1':
+  name: '[Pippi]'
+  sound: Kid
+  talker: pippi
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_OUTSIDE_1
+  actorsturn:
+    pippi:
+      x: 0
+      y: 1
+      speed: 0.05

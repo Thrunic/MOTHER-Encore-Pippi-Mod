@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scripts/debug/DebugStartPos.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/misc/Anim_start.gd" type="Script" id=2]
@@ -409,6 +409,122 @@ tracks/1/keys = {
 "values": [ -20.2 ]
 }
 
+[sub_resource type="Animation" id=138]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=139]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
+
+[sub_resource type="Animation" id=140]
+resource_name = "Arrow"
+length = 1.16667
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.249, 0.583333, 0.833333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -3, -10 ), Vector2( 0, 0 ), Vector2( 3, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.416667, 0.583333, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -25.0, 0.0, 25.0 ]
+}
+
+[sub_resource type="Animation" id=141]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -20.2 ]
+}
+
 [sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 208, 104 )
 
@@ -647,7 +763,7 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1835035, 20, 0, 1835036, 19, 0, 1900550, 4, 0, 4390915, 11, 0, 4390922, 12, 0 )
+tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1835035, 20, 0, 1835036, 19, 0, 1900550, 4, 0, 2818059, 21, 0, 4390915, 11, 0, 4390922, 12, 0 )
 
 [node name="PippisPlayhouseCore" type="TileMap" parent="Objects"]
 visible = false
@@ -711,27 +827,27 @@ player_turn = {
 }
 button_offset = Vector2( -7, -10 )
 
-[node name="interact_dialog6" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 416, 456 )
+[node name="interactWoodboxInside" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 186, 691 )
 scale = Vector2( 3, 3 )
-dialog = "Podunk/non-person text/Ninten's house/Bedside Drawer"
-_all_dialog = [ PoolStringArray( "poltergeist", "Reusable/nottime" ), PoolStringArray( "doll_defeated", "Podunk/non-person text/Ninten\'s house/Bedside Drawer" ) ]
+collision_layer = 65536
+collision_mask = 65536
+dialog = "Podunk/non-person text/Pippi's house/Woodbox Inside"
 player_turn = {
 "x": false,
 "y": false
 }
-button_offset = Vector2( -2, -10 )
+button_offset = Vector2( 0, -20 )
 
-[node name="interact_dialog8" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 204, 778 )
-scale = Vector2( 8.82842, 5.40837 )
-dialog = "Podunk/non-person text/Ninten's house/Downstairs TV"
-_all_dialog = [ PoolStringArray( "poltergeist", "Reusable/nottime" ), PoolStringArray( "doll_defeated", "Podunk/non-person text/Ninten\'s house/Downstairs TV" ) ]
+[node name="interactWoodboxOutside" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 188, 694 )
+scale = Vector2( 4, 4 )
+dialog = "Podunk/non-person text/Pippi's house/Woodbox Outside"
 player_turn = {
 "x": false,
 "y": false
 }
-button_offset = Vector2( 3, -20 )
+button_offset = Vector2( 0, -20 )
 
 [node name="interactPippiCostume" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 323, 109 )
@@ -1088,6 +1204,68 @@ __meta__ = {
 anims/Arrow = SubResource( 126 )
 anims/RESET = SubResource( 127 )
 
+[node name="Main Floor to Woodbox" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 219, 689 )
+player_turn = {
+"x": true,
+"y": true
+}
+target_layer = 17
+
+[node name="Sprite" parent="Objects/Main Floor to Woodbox" index="0"]
+material = SubResource( 125 )
+
+[node name="Position2D" parent="Objects/Main Floor to Woodbox/Jump Points" index="0"]
+position = Vector2( -12, 1 )
+
+[node name="Inside" parent="Objects/Main Floor to Woodbox" index="2"]
+position = Vector2( -4, -4 )
+
+[node name="CollisionShape2D" parent="Objects/Main Floor to Woodbox/Inside" index="0"]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="RayCast2D" parent="Objects/Main Floor to Woodbox" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Main Floor to Woodbox" index="7"]
+anims/Arrow = SubResource( 138 )
+anims/RESET = SubResource( 139 )
+
+[node name="Woodbox to Main Floor" parent="Objects" instance=ExtResource( 25 )]
+position = Vector2( 207, 689 )
+player_turn = {
+"x": true,
+"y": false
+}
+
+[node name="Sprite" parent="Objects/Woodbox to Main Floor" index="0"]
+material = SubResource( 125 )
+
+[node name="Position2D" parent="Objects/Woodbox to Main Floor/Jump Points" index="0"]
+position = Vector2( 22, 1 )
+
+[node name="Inside" parent="Objects/Woodbox to Main Floor" index="2"]
+position = Vector2( -4, -4 )
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Objects/Woodbox to Main Floor/Inside" index="0"]
+scale = Vector2( 0.6, 0.8 )
+
+[node name="Close" parent="Objects/Woodbox to Main Floor" index="3"]
+collision_layer = 65536
+
+[node name="RayCast2D" parent="Objects/Woodbox to Main Floor" index="6"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" parent="Objects/Woodbox to Main Floor" index="7"]
+anims/Arrow = SubResource( 140 )
+anims/RESET = SubResource( 141 )
+
 [node name="Above" type="TileMap" parent="."]
 z_index = 1
 tile_set = ExtResource( 18 )
@@ -1253,7 +1431,7 @@ collision_mask = 0
 
 [node name="CollisionMainRoom" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -816, 320 )
-polygon = PoolVector2Array( 816, 495, 928, 496, 928, 512, 976, 512, 976, 520, 768, 520, 768, 312, 1149, 312, 1149, 521, 976, 520, 976, 496, 1138, 496, 1117, 368, 945, 368, 945.049, 384, 928, 384, 928, 376, 896, 376, 896, 384, 868, 384, 868, 418, 862, 418, 862, 352, 831, 352, 827, 415, 816, 480 )
+polygon = PoolVector2Array( 816, 495, 928, 496, 928, 512, 976, 512, 976, 520, 768, 520, 768, 312, 1149, 312, 1149, 521, 976, 520, 976, 496, 1138, 496, 1117, 368, 1033, 368, 1033, 380, 992, 380, 992, 368, 945, 368, 945.049, 384, 928, 384, 928, 376, 896, 376, 896, 384, 868, 384, 868, 418, 862, 418, 862, 352, 831, 352, 827, 415, 816, 480 )
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -760, 616 )
@@ -1294,6 +1472,10 @@ polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 95
 [node name="CollisionLindgrensBed" type="CollisionPolygon2D" parent="CollisionsLayer17"]
 position = Vector2( -386, -5 )
 polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 954, 394, 953, 348, 913, 347, 913, 394, 954, 394 )
+
+[node name="CollisionWoodbox" type="CollisionPolygon2D" parent="CollisionsLayer17"]
+position = Vector2( -739, 311 )
+polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 955, 384, 955, 372, 916, 372, 916, 384, 955, 384 )
 
 [node name="CollisionsLayer18" type="StaticBody2D" parent="."]
 collision_layer = 132668
@@ -1484,6 +1666,8 @@ __meta__ = {
 [editable path="Objects/Lindgren Bed to Bookshelf"]
 [editable path="Objects/Lindgren Bookshelf to Bed"]
 [editable path="Objects/Lindgren Bookshelf to Floor"]
+[editable path="Objects/Main Floor to Woodbox"]
+[editable path="Objects/Woodbox to Main Floor"]
 [editable path="Doors/Lindgren_upstairs"]
 [editable path="Doors/Upstairs_Lindgren"]
 [editable path="Doors/Upstairs_Pippi"]

@@ -211,6 +211,9 @@ func _init_flags():
 		"leave_canary_village",
 		"pippi_delivered",
 		
+		#Pippi's House
+		"woodbox_item_received",
+		
 		#Zoo
 		"zoo_key_stolen",
 		"starman_jr_fought",
