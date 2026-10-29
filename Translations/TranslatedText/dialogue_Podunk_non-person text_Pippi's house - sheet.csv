@@ -46,6 +46,6 @@ DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_INSIDE_1,[@]You spot somet
 DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_INSIDE_2,[@][ItemReceiver] gets Canary Hair Ties.,[@][ItemReceiver] obtient des [canary hair ties].,,,,,,,,,,,
 DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_INSIDE_3,[@]But you're carrying too much stuff.,[@]Mais tu portes trop de choses.,,,,,,,,,,,
 DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_OUTSIDE_0,[@]A woodbox.,[@]Une boîte à bois.,,,,,,,,,,,
-DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_OUTSIDE_1,"[@]This house doesn't have a fireplace, but a woodbox is great for sitting on with your friends.","[@]Cette maison n'a pas de foyer, mais une boîte à bois est toujours bonne pour s'asseoir dessus avex ses amis.",,,,,,,,,,,
+DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_WOODBOX_OUTSIDE_1,"[@]This house doesn't have a fireplace, but a woodbox is great for sitting with your friends.","[@]Cette maison n'a pas de foyer, mais une boîte à bois est toujours bonne pour s'asseoir avex ses amis.",,,,,,,,,,,
 DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE-NO,No,Non,,,,,,,,,,,
 DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE-YES,Yes,Oui,,,,,,,,,,,

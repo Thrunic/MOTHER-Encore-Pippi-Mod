@@ -763,7 +763,7 @@ tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1835035, 20, 0, 1835036, 19, 0, 1900550, 4, 0, 2818059, 21, 0, 4390915, 11, 0, 4390922, 12, 0 )
+tile_data = PoolIntArray( 458757, 15, 0, 458758, 17, 0, 589844, 14, 0, 589849, 0, 0, 655395, 3, 0, 1835035, 20, 0, 1835036, 19, 0, 1900550, 4, 0, 2818056, 21, 0, 4390915, 11, 0, 4390922, 12, 0 )
 
 [node name="PippisPlayhouseCore" type="TileMap" parent="Objects"]
 visible = false
@@ -773,7 +773,7 @@ format = 1
 tile_data = PoolIntArray( 458757, 15, 0, 524293, 16, 0 )
 
 [node name="Phone" parent="Objects" instance=ExtResource( 7 )]
-position = Vector2( 148, 677 )
+position = Vector2( 63, 762 )
 dialog = "Reusable/phonenoanswer"
 _all_dialog = [ PoolStringArray( "phone_ring", "Podunk/dad_poltergeist" ), PoolStringArray( "talked_to_dad", "Reusable/dad_normal" ) ]
 
@@ -828,7 +828,7 @@ player_turn = {
 button_offset = Vector2( -7, -10 )
 
 [node name="interactWoodboxInside" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 186, 691 )
+position = Vector2( 139, 691 )
 scale = Vector2( 3, 3 )
 collision_layer = 65536
 collision_mask = 65536
@@ -840,7 +840,7 @@ player_turn = {
 button_offset = Vector2( 0, -20 )
 
 [node name="interactWoodboxOutside" parent="Objects" instance=ExtResource( 5 )]
-position = Vector2( 188, 694 )
+position = Vector2( 141, 694 )
 scale = Vector2( 4, 4 )
 dialog = "Podunk/non-person text/Pippi's house/Woodbox Outside"
 player_turn = {
@@ -1205,7 +1205,7 @@ anims/Arrow = SubResource( 126 )
 anims/RESET = SubResource( 127 )
 
 [node name="Main Floor to Woodbox" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 219, 689 )
+position = Vector2( 172, 689 )
 player_turn = {
 "x": true,
 "y": true
@@ -1234,7 +1234,7 @@ anims/Arrow = SubResource( 138 )
 anims/RESET = SubResource( 139 )
 
 [node name="Woodbox to Main Floor" parent="Objects" instance=ExtResource( 25 )]
-position = Vector2( 207, 689 )
+position = Vector2( 160, 689 )
 player_turn = {
 "x": true,
 "y": false
@@ -1431,7 +1431,7 @@ collision_mask = 0
 
 [node name="CollisionMainRoom" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -816, 320 )
-polygon = PoolVector2Array( 816, 495, 928, 496, 928, 512, 976, 512, 976, 520, 768, 520, 768, 312, 1149, 312, 1149, 521, 976, 520, 976, 496, 1138, 496, 1117, 368, 1033, 368, 1033, 380, 992, 380, 992, 368, 945, 368, 945.049, 384, 928, 384, 928, 376, 896, 376, 896, 384, 868, 384, 868, 418, 862, 418, 862, 352, 831, 352, 827, 415, 816, 480 )
+polygon = PoolVector2Array( 816, 495, 928, 496, 928, 512, 976, 512, 976, 520, 768, 520, 768, 312, 1149, 312, 1149, 521, 976, 520, 976, 496, 1138, 496, 1130, 445, 1110, 445, 1101, 380, 1019, 380, 1019, 368, 986, 368, 986, 380, 945, 380, 945.049, 384, 928, 384, 928, 376, 896, 376, 896, 384, 868, 384, 868, 418, 862, 418, 862, 352, 831, 352, 827, 415, 816, 480 )
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Collisions"]
 position = Vector2( -760, 616 )
@@ -1475,7 +1475,7 @@ polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 95
 
 [node name="CollisionWoodbox" type="CollisionPolygon2D" parent="CollisionsLayer17"]
 position = Vector2( -739, 311 )
-polygon = PoolVector2Array( 987, 424, 876, 423, 877, 322, 986, 322, 987, 424, 955, 384, 955, 372, 916, 372, 916, 384, 955, 384 )
+polygon = PoolVector2Array( 942, 424, 832, 424, 832, 322, 942, 322, 942, 424, 908, 384, 908, 372, 869, 372, 869, 384, 908, 384 )
 
 [node name="CollisionsLayer18" type="StaticBody2D" parent="."]
 collision_layer = 132668

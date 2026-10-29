@@ -301,7 +301,7 @@
 20/z_index = 0
 21/name = "Woodbox Front"
 21/texture = ExtResource( 1 )
-21/tex_offset = Vector2( 0, -16 )
+21/tex_offset = Vector2( 1, -16 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 0, 64, 48, 32 )
 21/tile_mode = 0
