@@ -4,6 +4,7 @@
     robot: Objects/npc2
     ninten: ninten
     lloyd: lloyd
+    pippi: pippi
   changecam: null
   teleportactors:
     distorto:

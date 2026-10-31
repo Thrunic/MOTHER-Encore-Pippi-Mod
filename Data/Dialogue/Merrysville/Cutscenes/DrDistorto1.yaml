@@ -1,7 +1,7 @@
 "0":
   actors:
     distorto: Objects/npc
-    ninten: ninten
+    leader: leader
   talker: distorto
   name: "???"
   text: DIALOGUE_MERRYSVILLE_CUTSCENES_DISTORTO1_0
@@ -74,7 +74,7 @@
   goto: "7"
 "7":
   showbox: false
-  changecam: ninten
+  changecam: leader
   teleportactors:
     distorto:
       x: 0
