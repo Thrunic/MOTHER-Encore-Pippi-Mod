@@ -1,0 +1,48 @@
+'0':
+  actors:
+    pippi: pippi
+  if:
+    haspartymembers:
+      pippi: true
+    goto: '1'
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PEPPARKAKOR_0
+
+'1':
+  name: '[Pippi]'
+  sound: Kid
+  talker: pippi
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PEPPARKAKOR_1
+  actorsturn:
+    pippi:
+      x: 0
+      y: 1
+      speed: 0.05
+  if:
+    hasinstorage1: Pepparkakor
+    hasitem1: Pepparkakor
+    or: true
+    goto: "alreadyhave"
+  goto: '2'
+'2':
+  name: '[Pippi]'
+  sound: Kid
+  talker: pippi
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PEPPARKAKOR_3
+  if:
+    invspace: true
+    goto: '3'
+  goto: "full"
+'3':
+  talker: null
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PEPPARKAKOR_4
+  item: Pepparkakor
+  soundeffect: Item Received.mp3
+
+"full":
+  talker: null
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_FULL
+"alreadyhave":
+  name: '[Pippi]'
+  sound: Kid
+  talker: pippi
+  text: DIALOGUE_PODUNK_NON-PERSON_TEXT_PIPPI_S_HOUSE_PEPPARKAKOR_2
