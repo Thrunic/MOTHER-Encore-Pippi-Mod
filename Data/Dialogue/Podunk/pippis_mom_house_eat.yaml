@@ -1,0 +1,15 @@
+'0':
+  if:
+    leader: pippi
+    goto: "pippi"
+  goto: "other"
+
+"pippi":
+  name: DIALOGUE_PODUNK_PIPPISMOM_SPEAKER_Mrs._Lindgren
+  sound: Female
+  text: DIALOGUE_PODUNK_PIPPIS_MOM_HOUSE_EAT_PIPPI
+
+"other":
+  name: DIALOGUE_PODUNK_PIPPISMOM_SPEAKER_Mrs._Lindgren
+  sound: Female
+  text: DIALOGUE_PODUNK_PIPPIS_MOM_HOUSE_EAT_OTHER

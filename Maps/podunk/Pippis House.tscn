@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Scripts/debug/DebugStartPos.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/misc/Anim_start.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Graphics/Objects/Doors/Door_Dark.png" type="Texture" id=23]
 [ext_resource path="res://Nodes/Overworld/Door.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Nodes/Overworld/jump area.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Nodes/Reusables/npc.tscn" type="PackedScene" id=26]
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -1278,6 +1279,16 @@ __meta__ = {
 [node name="AnimationPlayer" parent="Objects/Woodbox to Main Floor" index="7"]
 anims/Arrow = SubResource( 140 )
 anims/RESET = SubResource( 141 )
+
+[node name="Pippis Mom" parent="Objects" instance=ExtResource( 26 )]
+position = Vector2( 255, 724 )
+sprite = "Npcs/4dir/pippismom"
+dialog = "Podunk/pippis_mom_house_eat"
+appear_flag = "pippi_delivered"
+initial_dir = Vector2( 0, 1 )
+staring = true
+speed = 1
+walk_frequency = 1
 
 [node name="Above" type="TileMap" parent="."]
 z_index = 1
