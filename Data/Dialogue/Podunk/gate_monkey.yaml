@@ -1,7 +1,7 @@
 "0":
   actors:
     player: leader
-    monkey: Objects/NPCS/npc23
+    monkey: Objects/NPCS/gate_monkey
   name: DIALOGUE_PODUNK_GATE_MONKEY_SPEAKER_Monkey
   sound: Strange
   text: DIALOGUE_PODUNK_GATE_MONKEY_0
@@ -80,8 +80,22 @@
   caninput: false
   goto: "6"
 "6":
+  if:
+    leader: "pippi"
+    goto: '7'
   text: DIALOGUE_PODUNK_GATE_MONKEY_6
   removeitem: KeyZoo
   setflags: zoo_key_stolen
   eraseactors:
     monkey: true
+
+"7":
+  name: '[Pippi]'
+  sound: Kid
+  talker: player
+  text: DIALOGUE_PODUNK_GATE_MONKEY_7
+  actorsturn:
+    player:
+      x: 0
+      y: 1
+      speed: 0.05

@@ -7960,8 +7960,8 @@ disappear_flag = "drdistorto_disappear"
 initial_dir = Vector2( 0, 1 )
 wander = true
 
-[node name="npc20" parent="Objects/NPCS" instance=ExtResource( 8 )]
-position = Vector2( 640, 272 )
+[node name="pippis_mom_front_steps" parent="Objects/NPCS" instance=ExtResource( 8 )]
+position = Vector2( 642, 272 )
 sprite = "Npcs/4dir/pippismom"
 dialog = "Podunk/cutscenes/pippismom_help"
 disappear_flag = "pippi_rescued"
@@ -8024,7 +8024,7 @@ staring = true
 speed = 1
 walk_frequency = 1
 
-[node name="npc46" parent="Objects/NPCS" instance=ExtResource( 8 )]
+[node name="pippis_mom_canary_entrance" parent="Objects/NPCS" instance=ExtResource( 8 )]
 position = Vector2( -1232, 504 )
 sprite = "Npcs/4dir/pippismom"
 dialog = "Podunk/pippismom_canary"
@@ -8060,7 +8060,7 @@ dialog = "Podunk/zoofix"
 initial_dir = Vector2( 0, 1 )
 debug_npc = true
 
-[node name="npc23" parent="Objects/NPCS" instance=ExtResource( 8 )]
+[node name="gate_monkey" parent="Objects/NPCS" instance=ExtResource( 8 )]
 position = Vector2( 248, -808 )
 sprite = "Npcs/4dir/monkey"
 dialog = "Podunk/gate_monkey"
