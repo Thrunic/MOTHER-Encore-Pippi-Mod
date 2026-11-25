@@ -35,7 +35,7 @@ func _ready():
 		$AnimationPlayer.play("pippiFall")
 	else:
 		$AnimationPlayer.play("nintenFall")
-	audioManager.clear_all_music()
+	audioManager.stop_all_music_players()
 	_game_over_music = audioManager.play_music(audioManager.CHANNELS.MENU, "Game_Over.ogg")
 	yield($AnimationPlayer, "animation_finished")
 	
